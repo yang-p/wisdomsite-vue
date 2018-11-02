@@ -1,0 +1,143 @@
+//card组件
+.card {
+    position: relative;
+    padding: 5px 10px;
+    width: 100%;
+    border-radius: 4px;
+    background: rgba(131, 203, 228, .2);
+    box-sizing: border-box;
+
+    &__header {
+        padding: 10px 0;
+        font-weight: 600;
+        font-size: 14px;
+        color: #fff;
+        &__center {
+            text-align: center; 
+            font-size: 24px;
+        }
+    }
+
+    &__content {
+        height: 100%;
+        font-size: 10px;
+        color: #fff;
+    }
+
+    &__top-title {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        width: 120px;
+        height: 32px;
+        line-height: 32px;
+        color: #f5f5f5;
+        font-weight: 100;       
+        font-size: 14px;
+        text-align: center;
+        border-radius: 4px;
+        background-color: #4891BE;
+        transform: translate3d(-50%,-50%,0);       
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 30px;
+        height: 40px;
+    }
+    &::before {
+        right: 0;
+        top: 0;
+        border-top: 1px solid #4891BE;
+        border-right: 1px solid #4891BE;
+
+    }
+    &::after {
+        bottom: 0;
+        left: 0;
+        border-bottom: 1px solid #4891BE;
+        border-left: 1px solid #4891BE;
+    }
+
+    .bg-line {
+        position: absolute;
+        right: 2%;       
+        width: 22px;
+        height: 100px;
+        background: url(../images/icon/icon_turnline.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+
+//box-card组件
+.box-card {
+    position: relative;
+    box-sizing: border-box;
+    &__header {            
+        &__title {
+            font-size: 16px;
+            font-weight: 100;
+            line-height: 32px;
+            color: #fff;
+        }
+        &__text-right {
+            font-size: 16px;
+            font-weight: 400;
+            float: right;
+            color: #DBF0F8;
+            text-shadow: 0px 0px 2px #fff, 0px 0px 4px #fff;
+        }
+        &__title-center {
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+            .title-right {
+                margin-left: 35px;
+                color: #85F58F;
+            }
+        }
+    }
+    &__content {
+        width: 100%;
+    }
+}
+
+
+//swiper-card组件
+.swiper-card {
+    position: relative;
+    width: 100%;
+    background: rgba(131, 203, 228, .2);
+    box-sizing: border-box;
+    &__top-title {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        width: 120px;
+        height: 32px;
+        line-height: 32px;
+        color: #f5f5f5;
+        font-size: 14px;
+        font-weight: 100;
+        text-align: center;
+        border-radius: 4px;
+        background-color: #4891BE;
+        transform: translate3d(-50%,-50%,0);   
+        z-index: 10;         
+    }
+    &__content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}

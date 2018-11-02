@@ -1,0 +1,30 @@
+/**
+ * 清除默认样式
+ */
+ a { text-decoration: none;}
+ li { list-style: none;}
+ ul { padding: 0;margin: 0;}
+/**
+*全局布局
+*/
+
+html,
+body,
+.page-body  {
+   width: 100%;
+   height: 100%;
+   font-size: 10px;
+   font-family: "microsoft yahei", tahoma, arial, Helvetica, sans-serif;
+}
+body {
+   min-width: 1280px;
+   background:#010926 url(../../assets/images/bg_grid.png) no-repeat;
+   background-position: 0 100%;
+   background-size: 100%;
+   background-attachment: fixed;
+}
+.page-body {
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+}

@@ -1,0 +1,64 @@
+//字体颜色
+@font-white: #fff;
+@bg: #4891be;
+@font-blue: #4897ce;
+@bg-body:#010926;
+@font-color1:#82A9BA;
+//边框颜色
+@border-color1: #79D5F2;
+
+//单行文本溢出打点
+.text-point(){
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+//清除浮动
+.clear-fix(){
+    &::after {
+     content: "";
+     display: block;
+     clear: both;
+    }
+}
+
+//处理背景图片
+.bg-rps() {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+//flex大全
+.flex-column() {
+    display: flex;
+    flex-direction: column;
+}
+
+//文字阴影
+.text-shadow-white() { text-shadow:0px 0px 4px #fff, 0px 0px 8px #fff, 0px 0px 12px #fff;}
+
+//icon图标
+.icon-circle-icon1() { background-image: url(../images/icon/icon_cir1.png);}
+
+.icon-circle-icon1-act() { background-image: url(../images/icon/icon_cir1_act.png);}
+
+.icon-circle-icon2() { background-image: url(../images/icon/icon_cir2.png);}
+
+.icon-circle-icon2-act() { background-image: url(../images/icon/icon_cir2_act.png);}
+
+.icon-circle-icon3() { background-image: url(../images/icon/icon_cir3.png);}
+
+.icon-circle-icon3-act() { background-image: url(../images/icon/icon_cir3_act.png);}
+
+.icon-circle-icon4() { background-image: url(../images/icon/icon_cir4.png);}
+
+.icon-circle-icon4-act() { background-image: url(../images/icon/icon_cir4_act.png);}
+
+.icon-circle-icon5() { background-image: url(../images/icon/icon_cir5.png);}
+
+.icon-circle-icon5-act() { background-image: url(../images/icon/icon_cir5_act.png);}
+
+.icon-circle-icon6() {background-image: url(../images/icon/icon_cir6.png);}
+.icon-circle-icon6-act() { background-image: url(../images/icon/icon_cir6_act.png);}

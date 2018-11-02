@@ -1,0 +1,33 @@
+/**
+ *整体布局
+ */
+.content {
+  position: absolute;
+  width: 100%;
+  height: 86%;
+  left: 0;
+  bottom: 0%;
+  box-sizing: border-box;
+  padding: 10px 40px 0 40px;
+  margin-bottom: 20px;
+}
+.content__wrapper {
+  display: flex;
+  height: 100%;
+}
+.content__wrapper__left,
+.content__wrapper__center,
+.content__wrapper__right {
+  height: 100%;
+}
+.content__wrapper__left {
+  flex: 1;
+}
+.content__wrapper__center {
+  flex: 3;
+  margin-left: 20px;
+}
+.content__wrapper__right {
+  flex: 1;
+  margin-left: 20px;
+}
