@@ -1,5 +1,5 @@
 <template>
-    <div class="header" id="page-header">
+    <div class="header">
         <div class="header__msg">
             <div class="header__msg__left">
                 <div class="header__msg__left__wraper">

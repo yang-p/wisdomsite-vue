@@ -29,3 +29,13 @@ Vue.component('box-card',{
         </div>    
     `
 })
+
+//swiper-card组件
+Vue.component('swiper-card',{
+    template: `
+        <div class="swiper-card">
+            <slot name="swiper-card-top-title"></slot>
+            <div class=""></div>
+        </div>   
+    `
+})
