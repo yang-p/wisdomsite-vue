@@ -1,3 +1,4 @@
+@import './variables.less';
 //card组件
 .card {
     position: relative;
@@ -8,20 +9,26 @@
     box-sizing: border-box;
 
     &__header {
-        padding: 10px 0;
-        font-weight: 600;
-        font-size: 14px;
+        padding: 5px 0;
+        font-weight: 400;
+        font-size: 16px;
         color: #fff;
-        &__center {
+        &__title-center {
             text-align: center; 
             font-size: 24px;
+        }
+        &__title {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 32px;
+            color: #fff;
         }
     }
 
     &__content {
-        height: 100%;
         font-size: 10px;
         color: #fff;
+        box-sizing: border-box;
     }
 
     &__top-title {
@@ -105,9 +112,9 @@
     }
     &__content {
         width: 100%;
+        box-sizing: border-box;
     }
 }
-
 
 //swiper-card组件
 .swiper-card {
@@ -132,6 +139,14 @@
         transform: translate3d(-50%,-50%,0);   
         z-index: 10;         
     }
+    &__topbar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 9;
+        background: rgba(0,0,0,.4);
+    }
     &__content {
         position: absolute;
         left: 0;
@@ -141,3 +156,85 @@
         overflow: hidden;
     }
 }
+
+//icon-text组件
+.icon-text {
+    color: @font-color1;
+    &::before {
+        content: "";
+        display: inline-block;
+        margin-right: 6px;
+        width: 35px;
+        height: 30px;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+    span {
+        &:last-child {
+            margin-left: 4px;
+        }
+        
+    }
+}
+
+//switch按钮
+ 
+ .switch-btn {
+     float: right;
+    margin: 10px 0 0 10px;
+     &__checkbox {
+         display: none;
+         &:checked~label:before{
+            margin-left: 30px;
+         }
+         
+         &:checked~label:after{
+            content: 'ON';
+            background-color: #20A0FF;           
+            text-indent: -20px;
+            color:#fff;
+         }
+     }
+     label{
+        position:relative;
+        display: block;
+        border-radius: 20px;
+        width:50px;
+        height: 20px;
+        cursor: pointer;
+        &::before,
+        &::after {
+            height: 20px;
+            line-height:20px;
+            border-radius: 18px;           
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 20px;         
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+         }
+        &::after{
+            content: 'OFF';   
+            display: block;
+            font-size: 10px;
+            text-indent: 20px;
+            line-height: 20px;
+            color:#fff;
+           
+            background-color:#ccc;
+            transition: all 0.3s ease;
+         }
+
+     }
+
+
+
+ }

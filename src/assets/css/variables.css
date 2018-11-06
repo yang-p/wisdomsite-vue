@@ -1,0 +1,50 @@
+.flex-alignitem_center {
+  display: flex;
+  align-items: center;
+}
+.flex-column-jcsaround {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.flex-sparound {
+  display: flex;
+  justify-content: space-around;
+}
+.flex-1 {
+  flex: 1;
+}
+.icon-text-pm25::before {
+  background-image: url(../images/icon/icon_pm25.png);
+}
+.icon-text-thermometer::before {
+  background-image: url(../images/icon/icon_thermometer.png);
+}
+.icon-text-pm10::before {
+  background-image: url(../images/icon/icon_pm10.png);
+}
+.icon-text-humidity::before {
+  background-size: contain;
+  background-image: url(../images/icon/icon_humidity.png);
+}
+.icon-text-noise::before {
+  background-image: url(../images/icon/icon_noise.png);
+}
+.icon-text-windspeed::before {
+  background-image: url(../images/icon/icon_windspeed.png);
+}
+.labor-icon_peoplenumber {
+  width: 40px;
+  height: 27px;
+  background: url(../images/icon/icon_peoplenumber.png) no-repeat center center;
+}
+.labor-icon_labor {
+  width: 23px;
+  height: 30px;
+  background: url(../images/icon/icon_labor.png) no-repeat;
+}
+.labor-icon_manager {
+  width: 25px;
+  height: 27px;
+  background: url(../images/icon/icon_manager.png) no-repeat;
+}

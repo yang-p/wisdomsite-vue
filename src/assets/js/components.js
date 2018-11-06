@@ -1,5 +1,7 @@
 import Vue from 'vue'
 
+
+
 //card组件
 Vue.component('card',{
     template: `

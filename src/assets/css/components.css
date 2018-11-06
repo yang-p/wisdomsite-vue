@@ -1,3 +1,34 @@
+.flex-alignitem_center {
+  display: flex;
+  align-items: center;
+}
+.flex-column-jcsaround {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.flex-1 {
+  flex: 1;
+}
+.icon-text-pm25::before {
+  background-image: url(../images/icon/icon_pm25.png);
+}
+.icon-text-thermometer::before {
+  background-image: url(../images/icon/icon_thermometer.png);
+}
+.icon-text-pm10::before {
+  background-image: url(../images/icon/icon_pm10.png);
+}
+.icon-text-humidity::before {
+  background-size: contain;
+  background-image: url(../images/icon/icon_humidity.png);
+}
+.icon-text-noise::before {
+  background-image: url(../images/icon/icon_noise.png);
+}
+.icon-text-windspeed::before {
+  background-image: url(../images/icon/icon_windspeed.png);
+}
 .card {
   position: relative;
   padding: 5px 10px;
@@ -7,19 +38,25 @@
   box-sizing: border-box;
 }
 .card__header {
-  padding: 10px 0;
-  font-weight: 600;
-  font-size: 14px;
+  padding: 5px 0;
+  font-weight: 400;
+  font-size: 16px;
   color: #fff;
 }
-.card__header__center {
+.card__header__title-center {
   text-align: center;
   font-size: 24px;
 }
+.card__header__title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #fff;
+}
 .card__content {
-  height: 100%;
   font-size: 10px;
   color: #fff;
+  box-sizing: border-box;
 }
 .card__top-title {
   position: absolute;
@@ -94,6 +131,7 @@
 }
 .box-card__content {
   width: 100%;
+  box-sizing: border-box;
 }
 .swiper-card {
   position: relative;
@@ -118,6 +156,14 @@
   transform: translate3d(-50%, -50%, 0);
   z-index: 10;
 }
+.swiper-card__topbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.4);
+}
 .swiper-card__content {
   position: absolute;
   left: 0;
@@ -125,4 +171,72 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+.icon-text {
+  color: #82A9BA;
+}
+.icon-text::before {
+  content: "";
+  display: inline-block;
+  margin-right: 6px;
+  width: 35px;
+  height: 30px;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.icon-text span:last-child {
+  margin-left: 4px;
+}
+.switch-btn {
+  float: right;
+  margin: 10px 0 0 10px;
+}
+.switch-btn__checkbox {
+  display: none;
+}
+.switch-btn__checkbox:checked ~ label:before {
+  margin-left: 30px;
+}
+.switch-btn__checkbox:checked ~ label:after {
+  content: 'ON';
+  background-color: #20A0FF;
+  text-indent: -20px;
+  color: #fff;
+}
+.switch-btn label {
+  position: relative;
+  display: block;
+  border-radius: 20px;
+  width: 50px;
+  height: 20px;
+  cursor: pointer;
+}
+.switch-btn label::before,
+.switch-btn label::after {
+  height: 20px;
+  line-height: 20px;
+  border-radius: 18px;
+}
+.switch-btn label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+.switch-btn label::after {
+  content: 'OFF';
+  display: block;
+  font-size: 10px;
+  text-indent: 20px;
+  line-height: 20px;
+  color: #fff;
+  background-color: #ccc;
+  transition: all 0.3s ease;
 }

@@ -17,7 +17,7 @@
             </div>
             <div class="header__msg__right">
                 <div class="header__msg__right__wrapper">
-                    <div class="header__msg__zoom-btn screen-zoom"></div>
+                    <div class="header__msg__zoom-btn" @click="fullScreen"></div>
                     <span class="header__msg__temp">成都市19℃</span>
                     <span class="header__msg__humidity">湿度20%</span>
                 </div>
@@ -57,8 +57,28 @@
 </template>
 
 <script>
+import {ScreenZoom} from '../../src/assets/js/tools.js'
 export default {
     name: 'PageHeader',
+    data() {
+        return {
+           isFullScreen: false 
+        }
+    },
+    mounted() {
+        
+    },
+    methods: {
+        fullScreen() {
+            if(this.isFullScreen == false) {
+                ScreenZoom.fullScreen()
+                this.isFullScreen = true
+            } else {
+                ScreenZoom.exitFullScreen()
+                this.isFullScreen = false
+            } 
+        }
+    }
 }
 </script>
 

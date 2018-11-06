@@ -6,7 +6,10 @@ import router from './router'
 
 import './assets/css/normalize.css'
 import './assets/css/globalstyle.css'
+import './assets/css/liMarquee.css'
 import './assets/js/components'
+import 'swiper/dist/css/swiper.min.css'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

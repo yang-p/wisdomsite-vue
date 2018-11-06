@@ -8,7 +8,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-body {
-    background-color: #fff;
+// body {
+//     background-color: #fff;
+// }
+#app {
+    display: none;
 }
 </style>
