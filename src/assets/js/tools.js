@@ -98,7 +98,15 @@ let SetEcharts = (function(){
                 radius: ['40%','60%'],
                 center: ['26%','50%'],
                 label: {
-                    show: false
+                    show: false,
+                    color: '#fff',
+                },
+                labelLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    },
+                    length: 5,
+                    length2: 6                  
                 }
             }],
             tooltip: {
@@ -109,11 +117,11 @@ let SetEcharts = (function(){
                 textStyle: {
                     color: '#82A9BA',
                 }, 
-                orient: 'vertical',                  
+                orient: 'vertical',
             } 
         }
         vm.init = function(ele,options) {         
-             _.defaultsDeep(vm._default,options)
+             _.merge(vm._default,options)
             vm.megeEcharts(ele,vm._default)            
         }
         vm.megeEcharts = function(ele,option) {
@@ -124,12 +132,9 @@ let SetEcharts = (function(){
 
    return {
         init(ele,seriesType,options) {
-            //ele,echarts的容器
-            //seriesType,是饼图还是线图
-            //options， 图形的配置参数
+        //ele,echarts的容器  seriesType,是饼图还是线图  options, 图形的配置参数
         if(seriesType === 'pie') {
-            let pieCharts = new PieCharts()
-            
+            let pieCharts = new PieCharts()           
             pieCharts.init(ele,options)
             console.log('pieCharts:',pieCharts)
             return pieCharts

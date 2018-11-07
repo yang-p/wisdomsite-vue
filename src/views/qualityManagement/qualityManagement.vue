@@ -2,68 +2,264 @@
     <div class="content">
         <div class="content__wrapper">
             <div class="content__wrapper__left">
-                <div class="card">
-                    <div class="card__content">
-                        <div class="box-card">
+                <div class="card flex-2" >
+                    <div class="card__content flex-column" style="height: 100%;">
+                        <div class="box-card flex-1">
                             <div class="box-card__header">
                                 <span class="box-card__header__title">今日检查</span>
                             </div>
-                            <div class="box-card__content"></div>
+                            <div class="box-card__content" style="height: 80%;overflow:hidden;">                             
+                                <table class="table-list">
+                                    <tr class="tr__th">
+                                        <th>分类</th>
+                                        <th>内容</th>
+                                        <th>时间</th>
+                                    </tr>
+                                </table>
+                                <div class="dowebok1" style="height: 100%;">
+                                    <table class="table-list" style="background:rgba(14,38,71,.6);">
+                                        <tr>
+                                            <td>测试项目责任有限公司</td>
+                                            <td>20%</td>
+                                            <td>80%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>测试项目责任有限公司</td>
+                                            <td>20%</td>
+                                            <td>80%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>测试项目责任有限公司</td>
+                                            <td>20%</td>
+                                            <td>80%</td>
+                                        </tr>                                        
+                                        <tr>
+                                            <td>测试项目责任有限公司</td>
+                                            <td>20%</td>
+                                            <td>80%</td>
+                                        </tr>
+                                    </table>   
+                                </div>                         
+                            </div>
                         </div>
-                        <div class="box-card">
+                        <div class="box-card flex-1">
                             <div class="box-card__header">
                                 <span class="box-card__header__title">今日整改</span>
                             </div>
-                            <div class="box-card__content"></div>
+                            <div class="box-card__content" style="height: 80%;overflow:hidden;">
+                                <table class="table-list">
+                                    <tr class="tr__th">
+                                        <th>分类</th>
+                                        <th>内容</th>
+                                        <th>时间</th>
+                                    </tr>
+                                </table>
+                                <div class="dowebok1" style="height: 100%;overflow:hidden;">
+                                    <table class="table-list" style="background:rgba(14,38,71,.6);">
+                                        <tr>
+                                            <td>测试项目责任有限公司</td>
+                                            <td>20%</td>
+                                            <td>80%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>测试项目责任有限公司</td>
+                                            <td>20%</td>
+                                            <td>80%</td>
+                                        </tr>
+
+                                    </table>   
+                                </div>  
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card">
-                        <div class="card__content">
+                <div class="card flex-1 margin-top-30">
+                        <div class="card__content" style="height: 100%;">
                         <div class="box-card">
                             <div class="box-card__header">
                                 <span class="box-card__header__title">未销项对比（按分包商）</span>
                             </div>
-                            <div class="box-card__content"></div>
+                            <div class="box-card__content" style="height: 80%;overflow:hidden;">
+                                 <table class="table-list">
+                                    <tr class="tr__th">
+                                        <th>分类</th>
+                                        <th>内容</th>
+                                        <th>时间</th>
+                                    </tr>
+                                </table>
+                                <div class="dowebok1" style="height: 100%;overflow:hidden;">
+                                    <table class="table-list" style="background:rgba(14,38,71,.6);">
+                                        <tr>
+                                            <td>测试项目责任有限公司</td>
+                                            <td>20%</td>
+                                            <td>80%</td>
+                                        </tr>
+                                    </table>   
+                                </div>  
+                            </div>
                         </div>
                     </div>                       
                 </div>
             </div>
             <div class="content__wrapper__center">
-                <div class="swiper-card">
-                    
+                <div class="swiper-card quality-display">
+                    <div class="swiper-card__top-title">质量亮点展示</div>
+                    <div class="swiper-card__content" style="height: 100%;">                        
+                        <div class="swiper-container" ref="swiper_quality1">                                                      
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
+                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div>
+                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png"></div>
+                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
+                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div>
+                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-card quality-thumb">
+                    <!-- <div class="swiper-card__content">                        
+                        <div class="swiper-container" ref="swiper_quality2">                                                    
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
+                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div>
+                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png"></div>
+                            </div>
+                            <div class="swiper-button swiper-button-prev"></div>
+                            <div class="swiper-button swiper-button-next"></div>
+                        </div>
+                    </div> -->
                 </div>
             </div>
             <div class="content__wrapper__right">
-                <div class="card">
-                        <div class="card__content">
-                        <div class="box-card">
-                            <div class="box-card__header">
-                                <span class="box-card__header__title">检查累计</span>
+                <div class="card flex-1">                                       
+                    <div class="card__header">
+                        <span class="card__header__title">检查累计</span>
+                    </div>
+                    <div class="card__content" style="height: 85%;">
+                        <div class="pie-wrapper" style="height: 100%;">
+                            <div style="width: 100%;height:90%;" ref="pie_inspect"></div>
+                            <div class="flex-sparound pie-wrapper__bottom">
+                                <div><span>检查总数</span><span>261项</span></div>
+                                <div><span>合格</span><span>26项</span></div>
                             </div>
-                            <div class="box-card__content"></div>
                         </div>
-                    </div>                       
+                    </div> 
                 </div>
-                <div class="card">
-                        <div class="card__content">
-                        <div class="box-card">
-                            <div class="box-card__header">
-                                <span class="box-card__header__title">问题分布</span>
-                            </div>
-                            <div class="box-card__content"></div>
-                        </div>
-                    </div>                       
+                <div class="card flex-1 margin-top-30">                    
+                    <div class="card__header">
+                        <span class="card__header__title">问题分布</span>
+                    </div>
+                    <div class="card__content" style="height:85%;">
+                        <div style="height: 100%;" ref="pie_problem"></div>
+                    </div>                                  
                 </div>
             </div>
         </div>
     </div>        
 </template>
 <script>
-
+import $ from 'jquery'
+import '../../assets/js/jquery.liMarquee.js'
+import {SetSwiper,SetEcharts} from '../../assets/js/tools.js'
 export default {
     name: 'QualityManagement',
+    data() {
+        return {
+            pieInspectOpts: {
+               title: {
+                    text: '整改率',
+                    subtext: '96%',
+                    left: '40%',
+                    top: '30%',
+                    textStyle: {
 
+                        fontSize: 12
+                    },
+                    subtextStyle: {
+                        fontSize: 18
+                    },
+                },
+                color: ['#0CBD5C','#E5C63D'],
+                series: [
+                    {
+                        name: '质量',
+                        center: ['50%','40%'],
+                        data: [
+                            {value:217,name:'已整改 217项'},
+                            {value:25,name:'整改中 25项'}
+                        ],
+                    }
+                ],
+                legend: {
+                    left: '0',
+                    top: '74%',
+                    data: [
+                        {name:'已整改 217项'},
+                        {name:'整改中 25项'},
+                       
+                    ]                    
+                } 
+            },
+            pieProblemOpts: {
+                color: ['#0CBD5C','#E5C63D','#EA3636'],
+                series: [
+                    {
+                        name: '质量',
+                        radius: ['30%','50%'],
+                        center: ['50%','40%'],
+                        data: [
+                            {value:217,name:'施工用电'},
+                            {value:25,name:'基坑工程'},
+                             {value: 19,name: '安全管理'}
+                        ],
+                        label: {
+                            show: true
+                        }
+                    }
+                ],
+                legend: {
+                    left: '0',
+                    top: '70%',
+                    orient: 'horizontal',
+                    data: [
+                        {name:'施工用电'},
+                        {name:'基坑工程'},
+                         {name: '安全管理'}
+                    ]                    
+                } 
+            }
+        }
+    },
+    mounted() {
+        let pieInspect = this.$refs.pie_inspect //获取累计检查饼图的容器
+        let pieProblem = this.$refs.pie_problem //获取问题分布饼图的容器
+        $(function(){
+            $('.dowebok1').liMarquee({//初始化liMarquee
+                direction: 'up',
+                scrollamount: 10,
+                runshort: false,
+                loop: -1
+            });
+        });
+        // let swiper1= SetSwiper.init(this.$refs.swiper_quality1, {
+        //     loop: false
+        // })
+        // SetSwiper.init(this.$refs.swiper_quality2,{
+        //     loop: false,
+        //     slidesPerView: 4,
+        //     spaceBetween: 20
+        //     // controller: {
+        //     //     control: Swiper1,
+        //     //     inverse :true,
+        //     // },
+        // })
+        SetEcharts.init(pieInspect,'pie',this.pieInspectOpts)
+        SetEcharts.init(pieProblem,'pie',this.pieProblemOpts)
+    }
 }
 </script>
 
@@ -71,4 +267,38 @@ export default {
 @import '../../assets/css/variables.less';
 @import '../../assets/css/components.less';
 @import '../../assets/css/public.less';
+.content {
+    &__wrapper {
+        height: 100%;
+        &__left,
+        &__center,
+        &__right {
+            display: flex;
+            flex-direction: column;
+
+        }
+        &__right {
+            height: 100%;
+            overflow:hidden;
+        }
+        .quality-display {
+            flex: 3;    
+        }
+    }
+        .quality-thumb {
+            flex: 1;
+            margin-top: 30px;
+            .swiper-button-prev {
+                background-image: url(../../assets/images/icon/swiper_prev1.png);
+            }
+            .swiper-button-next {
+                background-image: url(../../assets/images/icon/swiper_next1.png);
+            }
+        }
+    }
+
+
+
+    
+
 </style>

@@ -85,11 +85,12 @@
 //box-card组件
 .box-card {
     position: relative;
+    height: 100%;
     box-sizing: border-box;
     &__header {            
         &__title {
             font-size: 16px;
-            font-weight: 100;
+            font-weight: 400;
             line-height: 32px;
             color: #fff;
         }
@@ -155,6 +156,25 @@
         height: 100%;
         overflow: hidden;
     }
+    .swiper-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .swiper-slide {
+            width: 100%;
+            height:100%;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    .swiper-button {
+        background-size: 80%;
+        background: rgba(0,0,0,0);
+        background-position: center center;
+        background-repeat: no-repeat;
+        }        
+    }
 }
 
 //icon-text组件
@@ -180,7 +200,6 @@
 }
 
 //switch按钮
- 
  .switch-btn {
      float: right;
     margin: 10px 0 0 10px;
@@ -232,9 +251,37 @@
             background-color:#ccc;
             transition: all 0.3s ease;
          }
-
      }
-
-
-
  }
+
+
+ //table-list组件
+.table-list {   
+    width: 100%; 
+    cursor: pointer;
+    tr {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        padding:1px 8px; 
+        font-size: 10px;
+        color: #fff;
+        text-align: center;
+        background: rgba(26,52,82,.6); 
+        &:last-child {
+            margin-bottom: 10px;
+        }           
+        th {
+            flex: 1;
+            padding: 8px 0;
+        }
+        td {
+            flex: 1;               
+        }
+    }
+    .tr__th {
+        margin-bottom: 10px;
+        background: linear-gradient(90deg,#011832 0%,#10486E 50%,#011832 100%);
+    }
+
+}

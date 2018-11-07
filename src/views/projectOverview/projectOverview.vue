@@ -59,9 +59,9 @@
                         <div style="float: right;">2018-05-24</div>                        
                     </div> 
                     <div class="swiper-card__content">                        
-                        <div class="swiper-container" ref="swiper_enginee">                                                      
+                        <div class="swiper-container" ref="swiper_enginee">                                            
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png" alt=""></div>
+                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
                                 <div class="swiper-slide"><img src="../../assets/images/swiper2.png" alt=""></div>
                                 <div class="swiper-slide"><img src="../../assets/images/project _drawing.png" alt=""></div>
                             </div>
@@ -260,7 +260,9 @@ export default {
             });
         });
         SetSwiper.init(this.$refs.swiper_enginee,{//初始化swiper
-            autoplay: this.ischecked
+            autoplay: this.ischecked,
+            mousewheel: true,
+            effect : 'fade',
         })
         SetEcharts.init(this.$refs.pie2,'pie',this.pie2Opts)//初始化pie2
         SetEcharts.init(this.$refs.pie1,'pie',this.pie1Opts)//初始化pie1
@@ -282,14 +284,10 @@ export default {
 @import '../../assets/css/variables.less';
 @import '../../assets/css/components.less';
 @import '../../assets/css/public.less';
-// @import '';
 .content {  
     &__wrapper {
         height: 100%;
-        &__left {
-            display: flex;
-            flex-direction: column;
-        }
+        &__left,
         &__center {
             display: flex;
             flex-direction: column;
@@ -323,8 +321,7 @@ export default {
     }
     .enginee-display {//工程展示
         flex: 4;
-        height: 60%;
-        width:100%;
+        // height: 60%;
         .swiper-card__topbar {
                 height: 40px;
                 color: #fff;

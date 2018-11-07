@@ -1,3 +1,53 @@
+.flex-alignitem_center {
+  display: flex;
+  align-items: center;
+}
+.flex-column-jcsaround {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.flex-sparound {
+  display: flex;
+  justify-content: space-around;
+}
+.flex-1 {
+  flex: 1;
+}
+.icon-text-pm25::before {
+  background-image: url(../images/icon/icon_pm25.png);
+}
+.icon-text-thermometer::before {
+  background-image: url(../images/icon/icon_thermometer.png);
+}
+.icon-text-pm10::before {
+  background-image: url(../images/icon/icon_pm10.png);
+}
+.icon-text-humidity::before {
+  background-size: contain;
+  background-image: url(../images/icon/icon_humidity.png);
+}
+.icon-text-noise::before {
+  background-image: url(../images/icon/icon_noise.png);
+}
+.icon-text-windspeed::before {
+  background-image: url(../images/icon/icon_windspeed.png);
+}
+.labor-icon_peoplenumber {
+  width: 40px;
+  height: 27px;
+  background: url(../images/icon/icon_peoplenumber.png) no-repeat center center;
+}
+.labor-icon_labor {
+  width: 23px;
+  height: 30px;
+  background: url(../images/icon/icon_labor.png) no-repeat;
+}
+.labor-icon_manager {
+  width: 25px;
+  height: 27px;
+  background: url(../images/icon/icon_manager.png) no-repeat;
+}
 /* 页面主体
    ========================================================================== */
 .content {
@@ -113,30 +163,6 @@
 .table-info .three-column td:last-child {
   width: 60px;
   text-align: right;
-}
-.table-list {
-  width: 100%;
-}
-.table-list tr {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-  padding: 1px 8px;
-  font-size: 10px;
-  color: #fff;
-  text-align: center;
-  background: rgba(26, 52, 82, 0.6);
-}
-.table-list tr th {
-  flex: 1;
-  padding: 8px 0;
-}
-.table-list tr td {
-  flex: 1;
-}
-.table-list .tr__th {
-  margin-bottom: 10px;
-  background: linear-gradient(90deg, #011832 0%, #10486E 50%, #011832 100%);
 }
 .switch-btn {
   position: absolute;
