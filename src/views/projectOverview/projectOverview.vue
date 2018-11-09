@@ -158,7 +158,7 @@ export default {
     data() {
         return {
             ischecked: true,
-            pie1Opts: {//pie1的配置参数            
+            pie1Opts: {//质量饼图的配置参数            
                 title: {
                     text: '整改率',
                     subtext: '99%',
@@ -195,21 +195,21 @@ export default {
                     {
                         name: '质量',
                         data: [
-                            {value:217,name:'已整改 217项'},
-                            {value:25,name:'整改中 25项'}
+                            {value:217,name:'已整改'},
+                            {value:25,name:'整改中'}
                         ],
                     }
                 ],
                 legend: {
-                    right: '2%',
+                    right: '0',
                     top: '25%',
                     data: [
-                        {name:'已整改 217项',icon:'circle'},
-                        {name:'整改中 25项',icon:'circle'}
+                        {name:'已整改',icon:'circle'},
+                        {name:'整改中',icon:'circle'}
                     ]                    
                 } 
             },            
-            pie2Opts: {//pie2的配置参数
+            pie2Opts: {//安全饼图的配置参数
                 title: {
                     text: '整改率',
                     subtext: '15%',
@@ -234,8 +234,8 @@ export default {
                     {
                         name: '安全',
                         data: [
-                            {value:217,name:'已整改 217项'},
-                            {value:25,name:'整改中 25项'}
+                            {value:217,name:'已整改'},
+                            {value:25,name:'整改中'}
                         ],
                     }
                 ],
@@ -243,12 +243,18 @@ export default {
                     right: '2%',
                     top: '25%',
                     data: [
-                        {name:'已整改 217项',icon:'circle'},
-                        {name:'整改中 25项',icon:'circle'}
+                        {name:'已整改',icon:'circle'},
+                        {name:'整改中',icon:'circle'}
                     ]                   
                 } 
             },
+            pieLegendParam: {
+                unity: '项'
+            }
         }
+    },
+    created() {
+
     },
     mounted() {
         $(function(){//
@@ -264,8 +270,8 @@ export default {
             mousewheel: true,
             effect : 'fade',
         })
-        SetEcharts.init(this.$refs.pie2,'pie',this.pie2Opts)//初始化pie2
-        SetEcharts.init(this.$refs.pie1,'pie',this.pie1Opts)//初始化pie1
+        SetEcharts.init(this.$refs.pie2,'pie',this.pie2Opts,this.pieLegendParam)//初始化pie2
+        SetEcharts.init(this.$refs.pie1,'pie',this.pie1Opts,this.pieLegendParam)//初始化pie1
         
     },
     methods: {

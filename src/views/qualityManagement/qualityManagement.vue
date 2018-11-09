@@ -17,7 +17,7 @@
                                     </tr>
                                 </table>
                                 <div class="dowebok1" style="height: 100%;">
-                                    <table class="table-list" style="background:rgba(14,38,71,.6);">
+                                    <table class="table-list table-list__td">
                                         <tr>
                                             <td>测试项目责任有限公司</td>
                                             <td>20%</td>
@@ -55,7 +55,7 @@
                                     </tr>
                                 </table>
                                 <div class="dowebok1" style="height: 100%;overflow:hidden;">
-                                    <table class="table-list" style="background:rgba(14,38,71,.6);">
+                                    <table class="table-list table-list__td">
                                         <tr>
                                             <td>测试项目责任有限公司</td>
                                             <td>20%</td>
@@ -74,13 +74,13 @@
                     </div>
                 </div>
                 <div class="card flex-1 margin-top-30">
-                        <div class="card__content" style="height: 100%;">
+                    <div class="card__content" style="height: 100%;">
                         <div class="box-card">
                             <div class="box-card__header">
                                 <span class="box-card__header__title">未销项对比（按分包商）</span>
                             </div>
                             <div class="box-card__content" style="height: 80%;overflow:hidden;">
-                                 <table class="table-list">
+                                <table class="table-list">
                                     <tr class="tr__th">
                                         <th>分类</th>
                                         <th>内容</th>
@@ -168,8 +168,8 @@ import {SetSwiper,SetEcharts} from '../../assets/js/tools.js'
 export default {
     name: 'QualityManagement',
     data() {
-        return {
-            pieInspectOpts: {
+        return {           
+            pieInspectOpts: {//检查累计配置参数
                title: {
                     text: '整改率',
                     subtext: '96%',
@@ -189,23 +189,19 @@ export default {
                         name: '质量',
                         center: ['50%','40%'],
                         data: [
-                            {value:217,name:'已整改 217项'},
-                            {value:25,name:'整改中 25项'}
+                            {value:217,name:'已整改'},
+                            {value:25,name:'整改中'}
                         ],
                     }
                 ],
                 legend: {
                     left: '0',
-                    top: '74%',
-                    data: [
-                        {name:'已整改 217项'},
-                        {name:'整改中 25项'},
-                       
-                    ]                    
+                    top: '74%',   
+                                    
                 } 
             },
-            pieProblemOpts: {
-                color: ['#0CBD5C','#E5C63D','#EA3636'],
+            pieProblemOpts: {//问题分布配置参数
+                color: ['#0CBD5C','#EA3636','#E5C63D'],
                 series: [
                     {
                         name: '质量',
@@ -225,26 +221,33 @@ export default {
                     left: '0',
                     top: '70%',
                     orient: 'horizontal',
-                    data: [
-                        {name:'施工用电'},
-                        {name:'基坑工程'},
-                         {name: '安全管理'}
-                    ]                    
+                    // data: [
+                    //     {name:'施工用电'},
+                    //     {name:'基坑工程'},
+                    //      {name: '安全管理'}
+                    // ]                    
                 } 
-            }
+            },
+            pieInspectLegendParam: {//检查累计legend配置参数
+                unity: '项',
+            },
         }
     },
     mounted() {
-        let pieInspect = this.$refs.pie_inspect //获取累计检查饼图的容器
-        let pieProblem = this.$refs.pie_problem //获取问题分布饼图的容器
-        $(function(){
-            $('.dowebok1').liMarquee({//初始化liMarquee
+        $(function(){//初始化liMarquee
+            $('.dowebok1').liMarquee({
                 direction: 'up',
                 scrollamount: 10,
                 runshort: false,
                 loop: -1
             });
         });
+        let pieInspect = this.$refs.pie_inspect //获取累计检查饼图的容器
+        let pieProblem = this.$refs.pie_problem //获取问题分布饼图的容器
+        SetEcharts.init(pieInspect,'pie',this.pieInspectOpts,this.pieInspectLegendParam)//初始化累计检查饼图
+        SetEcharts.init(pieProblem,'pie',this.pieProblemOpts)//初始化问题分布饼图
+
+
         // let swiper1= SetSwiper.init(this.$refs.swiper_quality1, {
         //     loop: false
         // })
@@ -257,8 +260,7 @@ export default {
         //     //     inverse :true,
         //     // },
         // })
-        SetEcharts.init(pieInspect,'pie',this.pieInspectOpts)
-        SetEcharts.init(pieProblem,'pie',this.pieProblemOpts)
+
     }
 }
 </script>
@@ -275,7 +277,6 @@ export default {
         &__right {
             display: flex;
             flex-direction: column;
-
         }
         &__right {
             height: 100%;

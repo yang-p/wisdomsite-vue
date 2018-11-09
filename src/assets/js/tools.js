@@ -74,12 +74,30 @@ let SetSwiper = (function () {
 })()
 
 /** 
+ * ===========================================
  * 配置echarts插件
+ * ===========================================
  * */
 let SetEcharts = (function(){
-    function PieCharts() {   
+    //饼图的配置函数
+    function PieCharts() {
         let vm = this
-        vm._default= {
+        vm.cbFormatter = function (params,option,unity) {//legend的formatter
+            let seriesData = option.series[0].data
+            let legendObj = {}
+            for (let i = 0; i < seriesData.length; i++) {
+                if (seriesData[i].name === params) {
+                     legendObj[seriesData[i].name] = seriesData[i].value + unity + ''
+                }
+            }
+            return legendObj
+        }
+        vm.legendParams = { //饼图legend的默认配置参数
+            unity: '', //data中的value值后面需要拼接的单位，默认不加单位
+            isShowValue: true,//是否显示data中的value，默认显示
+            returnSpace: "    "//data中的name和value之间的间隔距离（暂时用空格来进行分隔），默认四个空格
+        }
+        vm._default= { //饼图的默认配置参数
             title: {
                 textStyle: {
                     color: '#fff',
@@ -118,11 +136,25 @@ let SetEcharts = (function(){
                     color: '#82A9BA',
                 }, 
                 orient: 'vertical',
-            } 
+                formatter: function (params) {
+                   let {unity,isShowValue,returnSpace} = vm.legendParams
+                   let onj =  vm.cbFormatter(params,vm._default,unity)
+                    for (let prop in onj) {
+                        if(isShowValue) {
+                            return prop + returnSpace + onj[params]
+                        }else {
+                            return prop 
+                        }
+                        
+                    }              
+                },
+
+            }
         }
-        vm.init = function(ele,options) {         
+        vm.init = function(ele,options,legendParam) {         
              _.merge(vm._default,options)
-            vm.megeEcharts(ele,vm._default)            
+             _.merge(vm.legendParams,legendParam)
+            vm.megeEcharts(ele,vm._default)
         }
         vm.megeEcharts = function(ele,option) {
             vm.myChart = Echarts.init(ele)
@@ -130,16 +162,20 @@ let SetEcharts = (function(){
         }
     }
 
-   return {
-        init(ele,seriesType,options) {
-        //ele,echarts的容器  seriesType,是饼图还是线图  options, 图形的配置参数
-        if(seriesType === 'pie') {
-            let pieCharts = new PieCharts()           
-            pieCharts.init(ele,options)
-            console.log('pieCharts:',pieCharts)
-            return pieCharts
+return {
+    init(ele,seriesType,options,legendParam) {
+    /**
+        * @param {*} ele echarts的容器  
+        * @param {*} seriesType 判断是饼图还是线图 
+        * @param {*} options 图形的配置参数 
+        * @param {*} legendParam 饼图legend的配置参数
+        */
+            if(seriesType === 'pie') {
+                let pieCharts = new PieCharts()         
+                pieCharts.init(ele,options,legendParam)
+                return pieCharts
+            }
         }
-    }
    }
 }())
 
