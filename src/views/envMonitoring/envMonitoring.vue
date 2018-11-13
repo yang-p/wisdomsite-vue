@@ -33,7 +33,7 @@
                             <div class="box-card__content"></div>
                         </div>
                     </div>
-                </div>                     -->
+                </div> -->
             </div>
             <div class="content__wrapper__right">
                 <div class="content-right__top">
@@ -130,7 +130,7 @@ export default {
             .content-right__top {
                 display: flex;
                 flex: 4;
-                border: 1px solid red;
+                // border: 1px solid red;
                 &__left {
                     flex: 3;
                 }
@@ -140,7 +140,7 @@ export default {
             }
             .content-right__bottom {
                 flex: 1;
-                border: 1px solid green;
+                // border: 1px solid green;
             }
         }
     }

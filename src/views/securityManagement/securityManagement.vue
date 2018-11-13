@@ -88,7 +88,7 @@
                     </div>
                     <div class="card__content" style="height:80%;">
                         <div class="pie-wrapper" style="height: 100%;">
-                            <div style="height:80%;border:1px solid red;" ref="pie_inspect"></div>
+                            <div style="height:80%;" ref="pie_inspect"></div>
                             <div class="flex-sparound pie-wrapper__bottom">
                                 <div><span>检查总数</span><span>261项</span></div>
                                 <div><span>合格</span><span>26项</span></div>
@@ -135,7 +135,7 @@
                         <div class="card__header">
                             <span class="card__header__title">未佩戴安全帽抓拍</span>
                         </div>
-                        <div class="card__content" style="border: 1px solid red;height:85%;"></div>                                    
+                        <div class="card__content" style="height:85%;"></div>                                    
                     </div>
 
                     <div class="card flex-1 margin-top-30">
@@ -219,9 +219,9 @@ export default {
                 loop: -1
             });
         });
-        let pieInspect = this.$refs.pie_inspect //获取检查累计饼图的容器
+        // let pieInspect = this.$refs.pie_inspect //获取检查累计饼图的容器
         let pieProblem = this.$refs.pie_problem //获取问题分布饼图的容器
-        SetEcharts.init(pieInspect,'pie',this.pieInspectOpts,this.pieInspectLegendParam)//初始化检查累计饼图
+        // SetEcharts.init(pieInspect,'pie',this.pieInspectOpts,this.pieInspectLegendParam)//初始化检查累计饼图
         SetEcharts.init(pieProblem,'pie',this.pieProblemOpts)//初始化问题分布饼图
     }
 }

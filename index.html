@@ -3,24 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>智慧工地</title>
-    
+    <title>智慧工地</title>   
   </head>
   <body>
-      <script>
-          document.getElementsByTagName('body')[0].style.minHeight = window.innerHeight + 'px'
-
-console.log(document)
-document.addEventListener(
-    'webkitfullscreenchange', // webkitfullscreenchange/mozfullscreenchange
-    function( evt ){
-        //todo 全屏状态改变时的时间处理。
-        //默认不会有任何处理，需要自己判断当前屏幕全屏与否，做出相应处理。
-    },
-    false
-);
-
-      </script>
     <div id="app"></div>
+    <script>
+      document.body.style.minHeight = window.innerHeight + 'px'
+    </script>
   </body>
 </html>

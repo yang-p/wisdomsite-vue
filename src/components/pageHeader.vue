@@ -85,6 +85,7 @@ export default {
 <style lang="less" scoped>
 @import '../assets/css/public.less';
     .header {
+        width: 100%;
         &__msg {
             display: flex;
             justify-content: space-between;

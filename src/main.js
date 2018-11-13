@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
 import './assets/css/normalize.css'
 import './assets/css/globalstyle.css'
 import './assets/css/liMarquee.css'

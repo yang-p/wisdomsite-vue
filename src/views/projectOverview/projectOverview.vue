@@ -47,16 +47,23 @@
             <div class="content__wrapper__center">
                 <div class="swiper-card enginee-display">
                     <div class="swiper-card__topbar">
-                        <div style="float:left;">
+                        <div class="swiper-card__topbar__left">
                             <span>轮播</span>
                             <div class="switch-btn">
                                 <input type="checkbox" class="switch-btn__checkbox" :checked="ischecked" >
-                                <label for="autoplay-btn" class="switch-btn__label" @click="autoPlayBtn">
-                                </label>                                                            
+                                <label for="autoplay-btn" class="switch-btn__label" @click="autoPlayBtn"></label>                                                            
                             </div>
                         </div>
-                        <span style="margin-left:30px;">全景图片</span>
-                        <div style="float: right;">2018-05-24</div>                        
+                        <span>全景图片</span>
+                        <div class="swiper-card__topbar__right"> 
+                            <span>2018-05-24</span>
+                            <!-- <ul>
+                                <li>2018-05-20</li>
+                                <li>2018-05-21</li>
+                                <li>2018-05-22</li>
+                                <li>2018-05-23</li>
+                            </ul> -->
+                        </div>                        
                     </div> 
                     <div class="swiper-card__content">                        
                         <div class="swiper-container" ref="swiper_enginee">                                            
@@ -253,9 +260,6 @@ export default {
             }
         }
     },
-    created() {
-
-    },
     mounted() {
         $(function(){//
             $('.dowebok1').liMarquee({//初始化liMarquee
@@ -268,7 +272,7 @@ export default {
         SetSwiper.init(this.$refs.swiper_enginee,{//初始化swiper
             autoplay: this.ischecked,
             mousewheel: true,
-            effect : 'fade',
+            // effect : 'fade',
         })
         SetEcharts.init(this.$refs.pie2,'pie',this.pie2Opts,this.pieLegendParam)//初始化pie2
         SetEcharts.init(this.$refs.pie1,'pie',this.pie1Opts,this.pieLegendParam)//初始化pie1
@@ -327,14 +331,19 @@ export default {
     }
     .enginee-display {//工程展示
         flex: 4;
-        // height: 60%;
         .swiper-card__topbar {
-                height: 40px;
-                color: #fff;
-                padding: 0 40px;
-                line-height: 40px;
-                box-sizing: border-box;
-                text-align: center;
+            height: 40px;
+            color: #fff;
+            padding: 0 40px;
+            line-height: 40px;
+            box-sizing: border-box;
+            text-align: center;
+            &__left {
+                float: left;
+            }
+            &__right {
+                float: right;
+            }
         }
         .swiper-container {
             position: relative;
@@ -346,7 +355,8 @@ export default {
                 height:100%;
                 img {
                     width: 100%;
-                    height: 100%;
+                    height: auto;
+                    max-width: 100%;
                 }
             }
         .swiper-button {

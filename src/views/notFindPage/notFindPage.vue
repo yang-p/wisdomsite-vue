@@ -1,16 +1,24 @@
 <template>
-    <div style="color:red">404了解一下</div>
+    <div style="color:red">404了解一下1</div>
 </template>
 <script>
 export default {
-   name: 'NotFindPage' 
+   name: 'NotFindPage',
+   data() {
+       return {
+           isPageBody: true
+       }
+   },
+   mounted(){
+
+    //    this.$dispatch('isPagebody',this.isPageBody)
+
+   } 
 }
 </script>
 
 <style lang="less" scoped>
-// body {
-//     background-color: #fff;
-// }
+
 #app {
     display: none;
 }
