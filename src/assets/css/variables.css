@@ -136,3 +136,9 @@
 .icon-text-user5::before {
   background-image: url(../images/icon/icon_user5.png);
 }
+.icon-text-allelectric::before {
+  background-image: url(../images/icon/icon_electricity.png);
+}
+.icon-text-allwater::before {
+  background-image: url(../images/icon/icon_allwater.png);
+}

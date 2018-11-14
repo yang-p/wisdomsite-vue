@@ -70,7 +70,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
                                 <div class="swiper-slide"><img src="../../assets/images/swiper2.png" alt=""></div>
-                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png" alt=""></div>
+                                <!-- <div class="swiper-slide"><img src="../../assets/images/project_drawing.png" alt=""></div> -->
                             </div>
                             <div class="swiper-button swiper-button-prev"></div>
                             <div class="swiper-button swiper-button-next"></div>

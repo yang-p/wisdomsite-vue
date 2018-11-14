@@ -2,13 +2,13 @@
     <div class="content">
         <div class="content__wrapper">
             <div class="content__wrapper__left">
-                <div class="card flex-2" >
-                    <div class="card__content flex-column" style="height: 100%;">
-                        <div class="box-card flex-1">
+                <div class="card qm-today" >
+                    <div class="card__content qm-today__content">
+                        <div class="box-card qm-todaycheck">
                             <div class="box-card__header">
                                 <span class="box-card__header__title">今日检查</span>
                             </div>
-                            <div class="box-card__content" style="height: 80%;overflow:hidden;">                             
+                            <div class="box-card__content qm-todaycheck__content">                             
                                 <table class="table-list">
                                     <tr class="tr__th">
                                         <th>分类</th>
@@ -42,11 +42,11 @@
                                 </div>                         
                             </div>
                         </div>
-                        <div class="box-card flex-1">
+                        <div class="box-card qm-todayreform">
                             <div class="box-card__header">
                                 <span class="box-card__header__title">今日整改</span>
                             </div>
-                            <div class="box-card__content" style="height: 80%;overflow:hidden;">
+                            <div class="box-card__content qm-todayreform__content">
                                 <table class="table-list">
                                     <tr class="tr__th">
                                         <th>分类</th>
@@ -73,8 +73,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="card flex-1 margin-top-30">
-                    <div class="card__content" style="height: 100%;">
+                <div class="card qm-nosales">
+                    <div class="card__content qm-nosales__content">
                         <div class="box-card">
                             <div class="box-card__header">
                                 <span class="box-card__header__title">未销项对比（按分包商）</span>
@@ -102,36 +102,36 @@
                 </div>
             </div>
             <div class="content__wrapper__center">
-                <div class="swiper-card quality-display">
+                <div class="swiper-card qm-display">
                     <div class="swiper-card__top-title">质量亮点展示</div>
-                    <div class="swiper-card__content" style="height: 100%;">                        
-                        <div class="swiper-container" ref="swiper_quality1">                                                      
+                    <div class="swiper-card__content qm-display__content">                        
+                        <div class="swiper-container swiper1" ref="swiper_quality1" id="gallery">                                                   
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper2.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper2.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-card quality-thumb">
-                    <!-- <div class="swiper-card__content">                        
-                        <div class="swiper-container" ref="swiper_quality2">                                                    
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png" alt=""></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png" alt=""></div>
-                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png" alt=""></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png"></div>
+                <div class="swiper-card qm-thumb">
+                    <div class="swiper-card__content qm-thumb__content">                        
+                        <div class="swiper-container" ref="swiper_quality2" id="thumbs">                                   
+                            <div class="swiper-wrapper swiper1-thumb">
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper2.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper2.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></div>
                             </div>
-                            <div class="swiper-button swiper-button-prev"></div>
-                            <div class="swiper-button swiper-button-next"></div>
                         </div>
-                    </div> -->
+                            <div class="swiper-button swiper-button-prev swiper-btn-prev"></div>
+                            <div class="swiper-button swiper-button-next swiper-btn-next"></div>
+                    </div>
                 </div>
             </div>
             <div class="content__wrapper__right">
@@ -164,11 +164,13 @@
 <script>
 import $ from 'jquery'
 import '../../assets/js/jquery.liMarquee.js'
-import {SetSwiper,SetEcharts} from '../../assets/js/tools.js'
+import {SetEcharts} from '../../assets/js/tools.js'
+import Swiper from 'swiper'
 export default {
     name: 'QualityManagement',
     data() {
-        return {           
+        return {          
+            backgroundSrc:require('../../assets/images/project_drawing.png') ,
             pieInspectOpts: {//检查累计配置参数
                title: {
                     text: '整改率',
@@ -247,19 +249,22 @@ export default {
         SetEcharts.init(pieInspect,'pie',this.pieInspectOpts,this.pieInspectLegendParam)//初始化累计检查饼图
         SetEcharts.init(pieProblem,'pie',this.pieProblemOpts)//初始化问题分布饼图
 
+        let gallerySwiper = new Swiper('#gallery',{
+            thumbs: {
+                swiper: {
+                    el: '#thumbs',
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    watchSlidesVisibility: true,
+                },
+                slideThumbActiveClass: 'my-slide-thumb-active',
+            }
+        })
 
-        // let swiper1= SetSwiper.init(this.$refs.swiper_quality1, {
-        //     loop: false
-        // })
-        // SetSwiper.init(this.$refs.swiper_quality2,{
-        //     loop: false,
-        //     slidesPerView: 4,
-        //     spaceBetween: 20
-        //     // controller: {
-        //     //     control: Swiper1,
-        //     //     inverse :true,
-        //     // },
-        // })
 
     }
 }
@@ -275,31 +280,92 @@ export default {
         &__left,
         &__center,
         &__right {
-            display: flex;
-            flex-direction: column;
+            .flex-column;
         }
         &__right {
             height: 100%;
             overflow:hidden;
         }
-        .quality-display {
-            flex: 3;    
+    }
+
+    .qm-today {
+        flex: 2;
+        &__content {
+            .flex-column;
+            height: 100%;
+            .qm-todaycheck {//质量管理---今日检查
+                flex: 1;
+                &__content {
+                    height: 80%;
+                    overflow:hidden;
+                }
+            }
+            .qm-todayreform {//质量管理---今日整改
+                flex: 1;
+                &__content {
+                    height: 80%;
+                    overflow:hidden;
+                }
+            }
         }
     }
-        .quality-thumb {
-            flex: 1;
-            margin-top: 30px;
-            .swiper-button-prev {
+    .qm-nosales {//质量管理---未销项对比
+        flex: 1;
+        margin-top: 30px;
+        &__content {
+            height: 100%;
+        }
+    }
+    .qm-display {//质量管理--质量亮点展示
+        flex: 3;
+        &__content {
+            height: 100%;
+            .swiper-container {
+                .swiper-wrapper {
+                    .swiper-slide {
+                        width: 100%;
+                        height: 100%;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                }
+            }
+        }
+    }
+    .qm-thumb {//质量管理--质量亮点展示缩略图
+        flex: 1;
+        margin-top: 30px;      
+        &__content {        
+            padding: 10px 40px;
+            box-sizing: border-box;
+            .swiper-container {
+                position: relative;
+                box-sizing: border-box;
+                .swiper-wrapper {
+                    .swiper-slide {
+                        width: 100%;
+                        height: 100%;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                }
+            }
+            .swiper-button {  
+                position: absolute;             
+                background-size: 40%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                outline: none;
+            }
+            .swiper-btn-prev {
                 background-image: url(../../assets/images/icon/swiper_prev1.png);
             }
-            .swiper-button-next {
+            .swiper-btn-next {
                 background-image: url(../../assets/images/icon/swiper_next1.png);
             }
         }
     }
-
-
-
-    
-
+}
 </style>

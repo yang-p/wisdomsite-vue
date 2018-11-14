@@ -10,10 +10,10 @@
                             </div>
                             <div class="box-card__content pro-draw__content">
                                 <ul class="pro-draw__content__list">
-                                    <li><img src="../../assets/images/project _drawing.png"></li>
+                                    <li><img src="../../assets/images/project_drawing.png"></li>
                                     <li><img src="../../assets/images/swiper1.png" alt=""></li>
                                     <li><img src="../../assets/images/swiper2.png" alt=""></li>
-                                    <li><img src="../../assets/images/project _drawing.png"></li>
+                                    <li><img src="../../assets/images/project_drawing.png"></li>
                                     <li><img src="../../assets/images/swiper1.png" alt=""></li>
                                     <li><img src="../../assets/images/swiper2.png" alt=""></li>
                                 </ul>

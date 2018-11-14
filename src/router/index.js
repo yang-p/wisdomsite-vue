@@ -101,14 +101,14 @@ let router = new Router({
         title: '智慧工地-质量管理'
       }
     },
-    {
-      path: '*',
-      name: 'notFindPage',
-      component: NotFindPage,
-      meta: {
-        title: '404页面'
-      }
-    }
+    // {
+    //   path: '*',
+    //   name: 'notFindPage',
+    //   component: NotFindPage,
+    //   meta: {
+    //     title: '404页面'
+    //   }
+    // }
   ]
 })
 

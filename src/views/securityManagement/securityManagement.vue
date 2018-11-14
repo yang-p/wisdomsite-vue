@@ -98,47 +98,69 @@
                 </div>
             </div>
             <div class="content__wrapper__center">
-                <div class="swiper-card quality-display">
+                <div class="swiper-card qm-display">
                     <div class="swiper-card__top-title">安全展示</div>
-                    <div class="swiper-card__content" style="height: 100%;">                        
-                        <div class="swiper-container" ref="swiper_quality1">                                                      
+                    <div class="swiper-card__content qm-display__content">                        
+                        <div class="swiper-container swiper1" id="gallery">                                                   
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper2.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper2.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-card quality-thumb">
-                    <!-- <div class="swiper-card__content">                        
-                        <div class="swiper-container" ref="swiper_quality2">                                                    
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png" alt=""></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png" alt=""></div>
-                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png" alt=""></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/project _drawing.png"></div>
+                <div class="swiper-card qm-thumb">
+                    <div class="swiper-card__content qm-thumb__content">                        
+                        <div class="swiper-container" id="thumbs">                                   
+                            <div class="swiper-wrapper swiper1-thumb">
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper2.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper2.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></div>
                             </div>
-                            <div class="swiper-button swiper-button-prev"></div>
-                            <div class="swiper-button swiper-button-next"></div>
                         </div>
-                    </div> -->
+                            <div class="swiper-button swiper-button-prev swiper-btn-prev"></div>
+                            <div class="swiper-button swiper-button-next swiper-btn-next"></div>
+                    </div>
                 </div>
             </div>
                 <div class="content__wrapper__right">
-                    <div class="card flex-1">
+                    <div class="card swiper-snap">
                         <div class="card__header">
                             <span class="card__header__title">未佩戴安全帽抓拍</span>
                         </div>
-                        <div class="card__content" style="height:85%;"></div>                                    
+                        <div class="card__content swiper-snap__content">
+                            <div class="swiper-card">
+                                <div class="swiper-card__content">                        
+                                    <div class="swiper-container" id="swiper1">                                            
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
+                                            <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div>
+                                            <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
+                                            <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div> 
+                                            <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
+                                            <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div>                           
+                                        </div>
+                                        <div class="swiper-button swiper-button-prev"></div>
+                                        <div class="swiper-button swiper-button-next"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-snap__content__bottom">
+                                <div class="smallview-swiper-index">2/6</div>
+                                <div class="smallview-swiper-time">时间：<span>2018-10-20 7:22:56</span></div>
+                                <div class="smallview-swiper-position">位置：<span>2号闸机通道</span></div>                           
+                            </div>
+                        </div>                                    
                     </div>
 
-                    <div class="card flex-1 margin-top-30">
+                    <div class="card problem-distr">
                         <div class="card__header">
                             <span class="card__header__title">问题分布</span>
                         </div>
@@ -153,8 +175,9 @@
 </template>
 <script>
 import $ from 'jquery'
+import Swiper from 'swiper'
 import '../../assets/js/jquery.liMarquee.js'
-import {SetSwiper,SetEcharts} from '../../assets/js/tools.js'
+import {SetEcharts} from '../../assets/js/tools.js'
 export default {
     name: 'SecurityManagement',
     data() {
@@ -223,6 +246,30 @@ export default {
         let pieProblem = this.$refs.pie_problem //获取问题分布饼图的容器
         // SetEcharts.init(pieInspect,'pie',this.pieInspectOpts,this.pieInspectLegendParam)//初始化检查累计饼图
         SetEcharts.init(pieProblem,'pie',this.pieProblemOpts)//初始化问题分布饼图
+
+        let gallerySwiper = new Swiper('#gallery',{ //初始化swiper
+        spaceBetween: 10,
+            thumbs: {
+                swiper: {
+                    el: '#thumbs',
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    watchSlidesVisibility: true,
+                },
+                slideThumbActiveClass: 'my-slide-thumb-active',
+            }
+        })
+        let Swiper1 = new Swiper('#swiper1',{ //初始化swiper
+            // navigation: {
+            //     nextEl: '.swiper-button-next',
+            //     prevEl: '.swiper-button-prev',
+            // },
+
+        })
     }
 }
 </script>
@@ -237,9 +284,100 @@ export default {
         &__left,
         &__center,
         &__right {
-            display: flex;
-            flex-direction: column;
+            .flex-column;
         }
+    }
+    .qm-display {//安全管理--安全展示
+        flex: 3;
+        &__content {
+            height: 100%;
+            .swiper-container {
+                .swiper-wrapper {                  
+                    .swiper-slide {
+                        width: 100%;
+                        height: 100%;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                }
+            }
+        }
+    }
+    .qm-thumb {//安全管理--安全展示缩略图
+        flex: 1;
+        margin-top: 30px;      
+        &__content {        
+            padding: 10px 40px;
+            box-sizing: border-box;
+            .swiper-container {
+                position: relative;
+                box-sizing: border-box;
+                .swiper-wrapper {
+                    .swiper-slide {
+                        width: 100%;
+                        height: 100%;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+                }
+            }
+            .swiper-button {  
+                position: absolute;             
+                background-size: 40%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                outline: none;
+            }
+            .swiper-btn-prev {
+                background-image: url(../../assets/images/icon/swiper_prev1.png);
+            }
+            .swiper-btn-next {
+                background-image: url(../../assets/images/icon/swiper_next1.png);
+            }
+        }
+    }
+    .swiper-snap {//安全管理---未佩戴安全帽抓拍
+       flex: 1;
+       &__content {
+           height: 85%;
+           overflow: hidden;
+           .swiper-card {
+               height: 60%;
+               &__content {
+                   height: 100%;
+                   .swiper-container {
+                       height: 100%;
+                       .swiper-button {
+                            background: rgba(0,0,0,.4);
+                            background-repeat: no-repeat;
+                            background-position: center center;                          
+                           &-prev {
+                                background-image: url(../../assets/images/icon/icon_smallprev.png);
+                           }
+                           &-next {
+                                background-image: url(../../assets/images/icon/icon_smallnext.png);
+                           }
+                       }
+                   }
+               }
+           }
+           &__bottom {
+               padding-top: 4%;
+               height: 36%;
+              .flex-column;
+               justify-content: space-around;
+               .smallview-swiper-index {
+                   color: #82A9BA;
+                   text-align: center;
+               }
+           }
+       }
+    }
+    .problem-distr {//安全管理---问题分布
+        flex:1;
+        margin-top: 30px;
     }
 }
 </style>

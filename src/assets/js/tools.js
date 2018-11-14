@@ -1,5 +1,6 @@
 import Swiper from 'swiper'//引入swiper插件
 import Echarts from 'echarts'//引入echarts插件
+
 import _ from 'lodash' //引入lodash
 
 /**
@@ -45,23 +46,23 @@ let ScreenZoom = (function () {
 let SetSwiper = (function () {
       return {
           mySwiper: {},//声明一个对象，用于接受Swiper的实例化对象
+          option: {},//接受配置参数
           //默认参数配置 
           _default: {
-            loop: true, // 循环模式选项    
-            // 前进后退按钮
-            navigation: {
+            loop: true, // 循环模式选项         
+            navigation: {// 前进后退按钮
               nextEl: '.swiper-button-next',
               prevEl: '.swiper-button-prev',
             }
-        },  
-        option: {},//接受配置参数
+        },
         init(ele,options) {           
             this.megeSwiper(ele,options)
+            console.log('查看swiper的实例对象：',this.mySwiper)
         },
         megeSwiper(ele,opt) {
             //合并参数
-            let opts = Object.assign(this._default,opt)
-            this.mySwiper = new Swiper (ele,opts)  
+            _.merge(this._default,opt)
+            this.mySwiper = new Swiper (ele,this._default)  
         },
         isAutoPlay(isautoplay) {//接受一个布尔值isautoplay
             if(isautoplay) {

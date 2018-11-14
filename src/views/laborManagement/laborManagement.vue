@@ -99,7 +99,132 @@
                     </div>
             </div>
             <div class="content__wrapper__right">
+                <div class="card labor-unit">
+                    <div class="card__header">
+                        <span class="card__header__title">分包单位</span>
+                    </div>
+                    <div class="card__content labor-unit__content">
+                        <div class="box-card unit-info">
+                            <div class="box-card__header">
+                                <span class="box-card__header__title">项目测试有限公司</span>
+                            </div>
+                            <div class="box-card__content">
+                                <table class="table-info dowebok3" style="font-size:10px;height: 140px;margin-top: 21px;">
+                                    <tr class="three-column">
+                                        <td>到场人数</td>
+                                        <td><span class="td-bgcolor-1" style="width: 100%;"></span></td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>电焊工</td>
+                                        <td><span class="td-bgcolor-2" style="width: 19%;"></span></td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>水泥工</td>
+                                        <td><span class="td-bgcolor-3" style="width: 23%;"></span></td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>油漆工</td>
+                                        <td><span class="td-bgcolor-4" style="width: 14%;"></span></td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>机械工</td>
+                                        <td><span class="td-bgcolor-5" style="width: 35%;"></span></td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>架子工</td>
+                                        <td><span class="td-bgcolor-6" style="width: 7%;border-radius: 2px;"></span></td>
+                                        <td>3</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>  
 
+                        <div class="box-card unit-info">
+                            <div class="box-card__header">
+                                <span class="box-card__header__title">项目测试有限公司</span>
+                            </div>
+                            <div class="box-card__content">
+                                <table class="table-info dowebok3" style="font-size:10px;height: 140px;margin-top: 21px;">
+                                    <tr class="three-column">
+                                        <td>到场人数</td>
+                                        <td><span class="td-bgcolor-1" style="width: 100%;"></span></td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>电焊工</td>
+                                        <td><span class="td-bgcolor-2" style="width: 19%;"></span></td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>水泥工</td>
+                                        <td><span class="td-bgcolor-3" style="width: 23%;"></span></td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>油漆工</td>
+                                        <td><span class="td-bgcolor-4" style="width: 14%;"></span></td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>机械工</td>
+                                        <td><span class="td-bgcolor-5" style="width: 35%;"></span></td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>架子工</td>
+                                        <td><span class="td-bgcolor-6" style="width: 7%;border-radius: 2px;"></span></td>
+                                        <td>3</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="box-card unit-info">
+                            <div class="box-card__header">
+                                <span class="box-card__header__title">项目测试有限公司</span>
+                            </div>
+                            <div class="box-card__content">
+                                <table class="table-info dowebok3" style="font-size:10px;height: 140px;margin-top: 21px;">
+                                    <tr class="three-column">
+                                        <td>到场人数</td>
+                                        <td><span class="td-bgcolor-1" style="width: 100%;"></span></td>
+                                        <td>42</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>电焊工</td>
+                                        <td><span class="td-bgcolor-2" style="width: 19%;"></span></td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>水泥工</td>
+                                        <td><span class="td-bgcolor-3" style="width: 23%;"></span></td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>油漆工</td>
+                                        <td><span class="td-bgcolor-4" style="width: 14%;"></span></td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>机械工</td>
+                                        <td><span class="td-bgcolor-5" style="width: 35%;"></span></td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr class="three-column">
+                                        <td>架子工</td>
+                                        <td><span class="td-bgcolor-6" style="width: 7%;border-radius: 2px;"></span></td>
+                                        <td>3</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>                                                              
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -208,6 +333,19 @@ export default {
     .labor-curve {//劳务---今日人力曲线
         flex: 1;
         margin-top: 20px;
+    }
+    .labor-unit {//劳务---分包单位
+        height: 100%;
+        &__content {
+            height: 90%;
+            border: 1px solid red;
+            .flex-column;
+            // overflow: hidden;
+            .unit-info {
+                flex: 1;
+                border: 1px solid yellow;
+            }
+        }
     }
 }
 </style>
