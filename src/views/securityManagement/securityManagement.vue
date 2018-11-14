@@ -7,6 +7,7 @@
                             <div class="box-card flex-1">
                                 <div class="box-card__header">
                                     <span class="box-card__header__title">今日检查</span>
+                                    <span class="box-card__header__text-right">2018-10-12</span>
                                 </div>
                                 <div class="box-card__content" style="height: 80%;overflow:hidden;">                            
                                     <table class="table-list">
@@ -125,8 +126,8 @@
                                 <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></div>
                             </div>
                         </div>
-                            <div class="swiper-button swiper-button-prev swiper-btn-prev"></div>
-                            <div class="swiper-button swiper-button-next swiper-btn-next"></div>
+                            <div class="swiper-button swiper-button-prev btn-prev"></div>
+                            <div class="swiper-button swiper-button-next btn-next"></div>
                     </div>
                 </div>
             </div>
@@ -147,13 +148,13 @@
                                             <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
                                             <div class="swiper-slide"><img src="../../assets/images/swiper2.png"></div>                           
                                         </div>
-                                        <div class="swiper-button swiper-button-prev"></div>
-                                        <div class="swiper-button swiper-button-next"></div>
+                                        <div class="swiper-button swiper-button-prev swiper-btn-prev" @click = getRealIndex1></div>
+                                        <div class="swiper-button swiper-button-next swiper-btn-next" @click = getRealIndex2></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-snap__content__bottom">
-                                <div class="smallview-swiper-index">2/6</div>
+                                <div class="smallview-swiper-index">{{realIndex}}/6</div>
                                 <div class="smallview-swiper-time">时间：<span>2018-10-20 7:22:56</span></div>
                                 <div class="smallview-swiper-position">位置：<span>2号闸机通道</span></div>                           
                             </div>
@@ -211,7 +212,7 @@ export default {
                         radius: ['30%','50%'],
                         center: ['50%','30%'],
                         data: [
-                            {value:217,name:'施工用电'},
+                            {value:37,name:'施工用电'},
                             {value:25,name:'基坑工程'},
                             {value: 19,name: '安全管理'},
                             {value: 42,name: '文明施工'}
@@ -231,6 +232,9 @@ export default {
             pieInspectLegendParam: {//检查累计legend配置参数
                 unity: '项',
             },
+            swiper1: '',
+            realIndex: 1,
+            totalIndex: 0
         }
     },
     mounted() {
@@ -240,6 +244,7 @@ export default {
                 scrollamount: 10,
                 runshort: false,
                 loop: -1
+
             });
         });
         // let pieInspect = this.$refs.pie_inspect //获取检查累计饼图的容器
@@ -253,8 +258,8 @@ export default {
                 swiper: {
                     el: '#thumbs',
                     navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
+                        nextEl: '.btn-next',
+                        prevEl: '.btn-prev',
                     },
                     spaceBetween: 10,
                     slidesPerView: 4,
@@ -264,12 +269,25 @@ export default {
             }
         })
         let Swiper1 = new Swiper('#swiper1',{ //初始化swiper
-            // navigation: {
-            //     nextEl: '.swiper-button-next',
-            //     prevEl: '.swiper-button-prev',
-            // },
-
+            navigation: {
+                nextEl: '.swiper-btn-next',
+                prevEl: '.swiper-btn-prev',
+            },
         })
+        this.swiper1 = Swiper1
+    },
+    methods: {
+        getRealIndex1() {
+            this.realIndex = this.swiper1.realIndex 
+        },
+        getRealIndex2() {
+            this.realIndex = this.swiper1.realIndex + 2
+        }
+    },
+    computed: {
+        realIndex1() {
+            return this.realIndex + 1;
+        }
     }
 }
 </script>
@@ -330,10 +348,10 @@ export default {
                 background-position: center center;
                 outline: none;
             }
-            .swiper-btn-prev {
+            .swiper-button-prev {
                 background-image: url(../../assets/images/icon/swiper_prev1.png);
             }
-            .swiper-btn-next {
+            .swiper-button-next {
                 background-image: url(../../assets/images/icon/swiper_next1.png);
             }
         }
@@ -353,13 +371,15 @@ export default {
                             background: rgba(0,0,0,.4);
                             background-repeat: no-repeat;
                             background-position: center center;                          
-                           &-prev {
-                                background-image: url(../../assets/images/icon/icon_smallprev.png);
-                           }
-                           &-next {
-                                background-image: url(../../assets/images/icon/icon_smallnext.png);
-                           }
                        }
+                        .swiper-btn-prev {   
+                            left: 0;                            
+                            background-image: url(../../assets/images/icon/icon_smallprev.png);
+                           }
+                        .swiper-btn-next {
+                            right: 0;
+                            background-image: url(../../assets/images/icon/icon_smallnext.png);
+                        }
                    }
                }
            }

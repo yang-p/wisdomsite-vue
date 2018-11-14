@@ -136,6 +136,12 @@
 .icon-text-user5::before {
   background-image: url(../images/icon/icon_user5.png);
 }
+.icon-text-allelectric::before {
+  background-image: url(../images/icon/icon_electricity.png);
+}
+.icon-text-allwater::before {
+  background-image: url(../images/icon/icon_allwater.png);
+}
 .card {
   position: relative;
   padding: 5px 10px;
@@ -226,6 +232,7 @@
   font-weight: 400;
   float: right;
   color: #DBF0F8;
+  line-height: 32px;
   text-shadow: 0px 0px 2px #fff, 0px 0px 4px #fff;
 }
 .box-card__header__title-center {
@@ -307,7 +314,7 @@
   display: inline-block;
   margin-right: 6px;
   width: 35px;
-  height: 30px;
+  height: 36px;
   vertical-align: middle;
   background-repeat: no-repeat;
   background-position: center center;

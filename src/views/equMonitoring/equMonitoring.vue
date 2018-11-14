@@ -9,13 +9,12 @@
                                 <span class="box-card__header__title">项目工程图</span>
                             </div>
                             <div class="box-card__content pro-draw__content">
-                                <ul class="pro-draw__content__list">
-                                    <li><img src="../../assets/images/project_drawing.png"></li>
-                                    <li><img src="../../assets/images/swiper1.png" alt=""></li>
-                                    <li><img src="../../assets/images/swiper2.png" alt=""></li>
-                                    <li><img src="../../assets/images/project_drawing.png"></li>
-                                    <li><img src="../../assets/images/swiper1.png" alt=""></li>
-                                    <li><img src="../../assets/images/swiper2.png" alt=""></li>
+                                <ul class="pro-draw__content__list">                                 
+                                    <li :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></li>
+                                    <!-- <li :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></li>
+                                    <li :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></li>
+                                    <li :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></li>
+                                    <li :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></li> -->
                                 </ul>
                             </div>
                         </div>
@@ -70,9 +69,7 @@
                                 </ul> 
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
@@ -101,16 +98,18 @@ export default {
                 height: 100%;
                 overflow: hidden;
                 &__content {
-                    height: 80%;
+                    height: 92%;
+                    margin-top: 10px;
                     &__list {
                         position: relative;
+                        height: 100%;
                         li {
                             position: absolute;
                             overflow: hidden;
-                            img {
-                                width: 100%;
-                                max-height: 100%;
-                            }
+                            width: 100%;
+                            height: 100%;
+                            background-repeat: no-repeat;
+                            background-size: contain;                           
                         }
                     }
                 }
@@ -118,33 +117,17 @@ export default {
 
         }
         .content__card__right {
-            .flex-1;
-            .flex-column;
+            flex: 1;
             margin-left: 20px;
             height: 100%; 
             overflow: hidden;
-
         }
     }
 
-    .device-data {//设备监控---今日报警
-    margin-top: 20px;
-        &__content {
-            height: 64%;
-            &__list {
-                .flex-column;
-                height: 100%;
-                li {
-                    display: flex;
-                    flex: 1;
-                    justify-content: space-between;
-                }
-
-            }
-        }
-    }
     .related-equ {//设备监控---相关设备
+        height: 40%;
         &__content {
+            margin-top: 10px;
             ul {
                 display: flex;
                 justify-content: space-between;
@@ -165,28 +148,45 @@ export default {
                         box-sizing: border-box;
                     }
                     &:nth-child(1):hover .icon-circle__graph{                            
-                            .icon-circle-icon1-act;                                                     
+                        .icon-circle-icon1-act;                                                     
                     }
                     &:nth-child(2):hover .icon-circle__graph{
-                            .icon-circle-icon2-act;
+                        .icon-circle-icon2-act;
                     }
                     &:nth-child(3):hover .icon-circle__graph{
-                            .icon-circle-icon3-act;                            
+                        .icon-circle-icon3-act;                             
                     }
                     &:nth-child(4):hover .icon-circle__graph{
-                            .icon-circle-icon4-act;                        
+                        .icon-circle-icon4-act;                         
                     }
                     &:nth-child(5):hover .icon-circle__graph{
-                            .icon-circle-icon5-act;                     
+                        .icon-circle-icon5-act;                       
                     }
                     &:nth-child(6):hover .icon-circle__graph{
-                            .icon-circle-icon6-act;                      
+                        .icon-circle-icon6-act;                      
                     }
                 }
             }
         }      
     }
+    .device-data {//设备监控---今日报警
+        box-sizing: border-box;
+        height: 56%;
+        margin-top: 20px;
+        &__content {
+            height: 84%;
+            &__list {
+                .flex-column;
+                height: 100%;
+                li {
+                    display: flex;
+                    flex: 1;
+                    justify-content: space-between;
+                }
 
+            }
+        }
+    }
 
 }
 

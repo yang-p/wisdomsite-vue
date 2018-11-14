@@ -27,6 +27,24 @@
 .margin-top-30 {
   margin-top: 30px;
 }
+.icon-circle-icon1 {
+  background-image: url(../images/icon/icon_cir1.png);
+}
+.icon-circle-icon2 {
+  background-image: url(../images/icon/icon_cir2.png);
+}
+.icon-circle-icon3 {
+  background-image: url(../images/icon/icon_cir3.png);
+}
+.icon-circle-icon4 {
+  background-image: url(../images/icon/icon_cir4.png);
+}
+.icon-circle-icon5 {
+  background-image: url(../images/icon/icon_cir5.png);
+}
+.icon-circle-icon6 {
+  background-image: url(../images/icon/icon_cir6.png);
+}
 .icon-text-pm25::before {
   background-image: url(../images/icon/icon_pm25.png);
 }
@@ -61,6 +79,69 @@
   height: 27px;
   background: url(../images/icon/icon_manager.png) no-repeat;
 }
+.icon-text-classify::before {
+  background-image: url(../images/icon/icon_classify.png);
+}
+.icon-text-monitor::before {
+  background-image: url(../images/icon/icon_monitor.png);
+}
+.icon-text-smoke::before {
+  background-image: url(../images/icon/icon_smoke.png);
+}
+.icon-text-env::before {
+  background-image: url(../images/icon/icon_env.png);
+}
+.icon-text-electric::before {
+  background-image: url(../images/icon/icon_electric.png);
+}
+.icon-text-watermeter::before {
+  background-image: url(../images/icon/icon_watermeter.png);
+}
+.icon-text-warn::before {
+  width: 10px;
+  height: 24px;
+  background-image: url(../images/icon/icon_warn.png);
+}
+.icon-text-usernum::before {
+  background-image: url(../images/icon/icon_usernum.png);
+}
+.icon-text-floor::before {
+  background-image: url(../images/icon/icon_floor.png);
+}
+.icon-text-carspeed::before {
+  background-image: url(../images/icon/icon_carspeed.png);
+}
+.icon-text-windspeed::before {
+  background-image: url(../images/icon/icon_windspeed.png);
+}
+.icon-text-height::before {
+  background-image: url(../images/icon/icon_height.png);
+}
+.icon-text-username::before {
+  background-image: url(../images/icon/icon_username.png);
+}
+.icon-text-user1::before {
+  background-image: url(../images/icon/icon_user1.png);
+  height: 40px;
+}
+.icon-text-user2::before {
+  background-image: url(../images/icon/icon_user2.png);
+}
+.icon-text-user3::before {
+  background-image: url(../images/icon/icon_user3.png);
+}
+.icon-text-user4::before {
+  background-image: url(../images/icon/icon_user4.png);
+}
+.icon-text-user5::before {
+  background-image: url(../images/icon/icon_user5.png);
+}
+.icon-text-allelectric::before {
+  background-image: url(../images/icon/icon_electricity.png);
+}
+.icon-text-allwater::before {
+  background-image: url(../images/icon/icon_allwater.png);
+}
 /**
  *整体布局
  */
@@ -73,6 +154,10 @@
   box-sizing: border-box;
   padding: 10px 40px 0 40px;
   margin-bottom: 20px;
+  background: url(../../assets/images/bg_grid.png) no-repeat;
+  background-position: 0 100%;
+  background-size: 100%;
+  background-attachment: fixed;
 }
 .content__wrapper {
   display: flex;

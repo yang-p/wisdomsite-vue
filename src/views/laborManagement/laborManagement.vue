@@ -6,8 +6,8 @@
                     <div class="card__header">
                         <span class="card__header__title">人员</span>
                     </div>
-                    <div class="card__content">
-                        <ul>
+                    <div class="card__content labor-worker__content">
+                        <ul class="labor-worker__list">
                             <li class="flex-between"><span class="icon-text icon-text-user1">进场等级人数</span><span>356</span></li>
                             <li class="flex-between"><span class="icon-text icon-text-user2">今日考勤人数</span><span>356</span></li>
                             <li class="flex-between"><span class="icon-text icon-text-user3">项目在场人数</span><span>356</span></li>
@@ -30,13 +30,13 @@
                         <div class="card__top-title">人脸识别</div>
                         <div class="card__content labor-face__content">
                             <div class="labor-face__content__avatar">
-                                <div class="flex-column_aligncenter">
+                                <div class="labor-face__avatar">
                                     <div class="worker-avatar realTime-avatar"><img src="../../assets/images/worker_avatar1.png" alt=""></div>
-                                    <p class="text-center">实时监控头像</p>
+                                    <p>实时监控头像</p>
                                 </div>
-                                <div class="flex-column_aligncenter">
+                                <div class="labor-face__avatar">
                                     <div class="worker-avatar register-avatar"><img src="../../assets/images/worker_avatar2.png" alt=""></div>
-                                    <p class="text-center">登记人头像</p>
+                                    <p>登记人头像</p>
                                 </div>
                             </div>                      
                             <div class="worker-info">
@@ -94,7 +94,10 @@
                   
                     <div class="card labor-curve">
                         <div class="card__header">
-                            
+                            <span class="card__header__title">今日人力曲线</span>
+                        </div>
+                        <div class="card__content">
+
                         </div>
                     </div>
             </div>
@@ -104,125 +107,127 @@
                         <span class="card__header__title">分包单位</span>
                     </div>
                     <div class="card__content labor-unit__content">
-                        <div class="box-card unit-info">
-                            <div class="box-card__header">
-                                <span class="box-card__header__title">项目测试有限公司</span>
-                            </div>
-                            <div class="box-card__content">
-                                <table class="table-info dowebok3" style="font-size:10px;height: 140px;margin-top: 21px;">
-                                    <tr class="three-column">
-                                        <td>到场人数</td>
-                                        <td><span class="td-bgcolor-1" style="width: 100%;"></span></td>
-                                        <td>42</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>电焊工</td>
-                                        <td><span class="td-bgcolor-2" style="width: 19%;"></span></td>
-                                        <td>8</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>水泥工</td>
-                                        <td><span class="td-bgcolor-3" style="width: 23%;"></span></td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>油漆工</td>
-                                        <td><span class="td-bgcolor-4" style="width: 14%;"></span></td>
-                                        <td>6</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>机械工</td>
-                                        <td><span class="td-bgcolor-5" style="width: 35%;"></span></td>
-                                        <td>15</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>架子工</td>
-                                        <td><span class="td-bgcolor-6" style="width: 7%;border-radius: 2px;"></span></td>
-                                        <td>3</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>  
+                        <div class="dowebok1" style="height: 100%;">
+                            <div class="box-card unit-info">
+                                <div class="box-card__header">
+                                    <span class="box-card__header__title">项目测试有限公司</span>
+                                </div>
+                                <div class="box-card__content">
+                                    <table class="table-info dowebok3" style="">
+                                        <tr class="three-column">
+                                            <td>到场人数</td>
+                                            <td><span class="td-bgcolor-1" style="width: 100%;"></span></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>电焊工</td>
+                                            <td><span class="td-bgcolor-2" style="width: 19%;"></span></td>
+                                            <td>8</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>水泥工</td>
+                                            <td><span class="td-bgcolor-3" style="width: 23%;"></span></td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>油漆工</td>
+                                            <td><span class="td-bgcolor-4" style="width: 14%;"></span></td>
+                                            <td>6</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>机械工</td>
+                                            <td><span class="td-bgcolor-5" style="width: 35%;"></span></td>
+                                            <td>15</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>架子工</td>
+                                            <td><span class="td-bgcolor-6" style="width: 7%;border-radius: 2px;"></span></td>
+                                            <td>3</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>  
 
-                        <div class="box-card unit-info">
-                            <div class="box-card__header">
-                                <span class="box-card__header__title">项目测试有限公司</span>
+                            <div class="box-card unit-info">
+                                <div class="box-card__header">
+                                    <span class="box-card__header__title">项目测试有限公司</span>
+                                </div>
+                                <div class="box-card__content">
+                                    <table class="table-info">
+                                        <tr class="three-column">
+                                            <td>到场人数</td>
+                                            <td><span class="td-bgcolor-1" style="width: 100%;"></span></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>电焊工</td>
+                                            <td><span class="td-bgcolor-2" style="width: 19%;"></span></td>
+                                            <td>8</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>水泥工</td>
+                                            <td><span class="td-bgcolor-3" style="width: 23%;"></span></td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>油漆工</td>
+                                            <td><span class="td-bgcolor-4" style="width: 14%;"></span></td>
+                                            <td>6</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>机械工</td>
+                                            <td><span class="td-bgcolor-5" style="width: 35%;"></span></td>
+                                            <td>15</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>架子工</td>
+                                            <td><span class="td-bgcolor-6" style="width: 7%;border-radius: 2px;"></span></td>
+                                            <td>3</td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="box-card__content">
-                                <table class="table-info dowebok3" style="font-size:10px;height: 140px;margin-top: 21px;">
-                                    <tr class="three-column">
-                                        <td>到场人数</td>
-                                        <td><span class="td-bgcolor-1" style="width: 100%;"></span></td>
-                                        <td>42</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>电焊工</td>
-                                        <td><span class="td-bgcolor-2" style="width: 19%;"></span></td>
-                                        <td>8</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>水泥工</td>
-                                        <td><span class="td-bgcolor-3" style="width: 23%;"></span></td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>油漆工</td>
-                                        <td><span class="td-bgcolor-4" style="width: 14%;"></span></td>
-                                        <td>6</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>机械工</td>
-                                        <td><span class="td-bgcolor-5" style="width: 35%;"></span></td>
-                                        <td>15</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>架子工</td>
-                                        <td><span class="td-bgcolor-6" style="width: 7%;border-radius: 2px;"></span></td>
-                                        <td>3</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
 
-                        <div class="box-card unit-info">
-                            <div class="box-card__header">
-                                <span class="box-card__header__title">项目测试有限公司</span>
-                            </div>
-                            <div class="box-card__content">
-                                <table class="table-info dowebok3" style="font-size:10px;height: 140px;margin-top: 21px;">
-                                    <tr class="three-column">
-                                        <td>到场人数</td>
-                                        <td><span class="td-bgcolor-1" style="width: 100%;"></span></td>
-                                        <td>42</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>电焊工</td>
-                                        <td><span class="td-bgcolor-2" style="width: 19%;"></span></td>
-                                        <td>8</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>水泥工</td>
-                                        <td><span class="td-bgcolor-3" style="width: 23%;"></span></td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>油漆工</td>
-                                        <td><span class="td-bgcolor-4" style="width: 14%;"></span></td>
-                                        <td>6</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>机械工</td>
-                                        <td><span class="td-bgcolor-5" style="width: 35%;"></span></td>
-                                        <td>15</td>
-                                    </tr>
-                                    <tr class="three-column">
-                                        <td>架子工</td>
-                                        <td><span class="td-bgcolor-6" style="width: 7%;border-radius: 2px;"></span></td>
-                                        <td>3</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>                                                              
+                            <div class="box-card unit-info">
+                                <div class="box-card__header">
+                                    <span class="box-card__header__title">项目测试有限公司</span>
+                                </div>
+                                <div class="box-card__content">
+                                    <table class="table-info">
+                                        <tr class="three-column">
+                                            <td>到场人数</td>
+                                            <td><span class="td-bgcolor-1" style="width: 100%;"></span></td>
+                                            <td>42</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>电焊工</td>
+                                            <td><span class="td-bgcolor-2" style="width: 19%;"></span></td>
+                                            <td>8</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>水泥工</td>
+                                            <td><span class="td-bgcolor-3" style="width: 23%;"></span></td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>油漆工</td>
+                                            <td><span class="td-bgcolor-4" style="width: 14%;"></span></td>
+                                            <td>6</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>机械工</td>
+                                            <td><span class="td-bgcolor-5" style="width: 35%;"></span></td>
+                                            <td>15</td>
+                                        </tr>
+                                        <tr class="three-column">
+                                            <td>架子工</td>
+                                            <td><span class="td-bgcolor-6" style="width: 7%;border-radius: 2px;"></span></td>
+                                            <td>3</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div> 
+                        </div>                                                             
                     </div>
                 </div>
             </div>
@@ -230,9 +235,19 @@
     </div>
 </template>
 <script>
-
+import $ from 'jquery'
 export default {
     name: 'LaborManagement',
+    mounted () {
+        $(function(){//
+            $('.dowebok1').liMarquee({//初始化liMarquee
+                direction: 'up',
+                scrollamount: 10,
+                runshort: false,
+                loop: -1
+            });
+        });
+    }
 
 }
 </script>
@@ -253,6 +268,26 @@ export default {
     }
     .labor-worker {//劳务---人员
         flex: 3;
+        &__content {
+            height: 80%;
+        }
+        &__list {
+            height: 100%;
+            .flex-column;
+            li {
+                flex: 1;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.2rem;
+                span {
+                    &:last-child {
+                        font-size: 1.4rem;
+                        text-shadow: 0px 0px 2px #fff, 0px 0px 4px #fff;  
+                    }             
+                }
+            }
+        }
         
     }
     .labor-worktype {//劳务---工种
@@ -260,16 +295,20 @@ export default {
         margin-top: 20px;
     }
     .labor-face {//劳务---人脸识别
-        flex: 4;
+        flex: 3;
         &__content {
             .flex-column;
             height: 100%;
+            margin-top: 30px;
             &__avatar {
-                // border: 1px solid yellow;
                 display: flex;
-                flex: 2;
+                flex: 3;
                 justify-content: space-around;
                 border-bottom: 1px solid #316180;
+                .labor-face__avatar {
+                    .flex-column;
+                    align-items: center;
+                }
                 .worker-avatar {
                     height: 200px;
                     border: 2px solid #4891BE;
@@ -281,7 +320,7 @@ export default {
                 }
                 .worker-avatar + p {
                     color: #DBF0F8;
-                    text-shadow: 0px 0px 2px #fff, 0px 0px 4px #fff;
+                    text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
                 }
                 .realTime-avatar {
                     width: 280px;           
@@ -292,37 +331,32 @@ export default {
             }
             .worker-info {
                 display: flex;
-                flex: 1;
+                flex: 2;
                 color: #D3D4D4;
+                padding: 20px;
                 &__left {
                     flex: 1;
 
                 }
                 &__right {
                     flex: 1;
-                    margin-left: 20px;
+                    margin-left: 40px;
                 }
                 .table-info1 {
                     height: 100%;
                     .flex-column;
                     tr {
-                        // border: 1px solid yellow;
                         td {
-
                             &:first-child {
-                                // text-align: left;
                                 float: left;
                             }
                             &:last-child {
-                                // text-align: right;
                                 float: right;
                             }
                         }
                         flex: 1;
 
                     }
-                    
-                    // justify-content: space-around;
                 }
             }           
         }
@@ -336,14 +370,25 @@ export default {
     }
     .labor-unit {//劳务---分包单位
         height: 100%;
+        overflow: hidden;
+        padding-bottom: 10px;
         &__content {
             height: 90%;
-            border: 1px solid red;
+            margin-top: 10px;
+            
             .flex-column;
-            // overflow: hidden;
             .unit-info {
                 flex: 1;
-                border: 1px solid yellow;
+                border-bottom: 1px solid #316180;
+                cursor: pointer;
+                &:last-child {
+                    border-bottom: none;
+                }
+                .table-info {
+                    font-size:1rem;
+                    height: 140px;
+                    margin-top: 10px;
+                }
             }
         }
     }

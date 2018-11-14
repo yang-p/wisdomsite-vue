@@ -7,6 +7,7 @@
                         <div class="box-card qm-todaycheck">
                             <div class="box-card__header">
                                 <span class="box-card__header__title">今日检查</span>
+                                <span class="box-card__header__text-right">2018-10-12</span>
                             </div>
                             <div class="box-card__content qm-todaycheck__content">                             
                                 <table class="table-list">
@@ -45,6 +46,7 @@
                         <div class="box-card qm-todayreform">
                             <div class="box-card__header">
                                 <span class="box-card__header__title">今日整改</span>
+                                
                             </div>
                             <div class="box-card__content qm-todayreform__content">
                                 <table class="table-list">

@@ -18,15 +18,16 @@ body,
    font-size: 10px;
    font-family: "microsoft yahei", tahoma, arial, Helvetica, sans-serif;
 }
+html {
+    font-size: 10px;
+}
 body {
-   min-width: 1280px;
-   background:#010926 url(../../assets/images/bg_grid.png) no-repeat;
-   background-position: 0 100%;
-   background-size: 100%;
-   background-attachment: fixed;
+   min-width: 1350px;
+
    overflow: auto;
    box-sizing: border-box;
    height: 100vh;
+   background-color: #010926;
 }
 .page-body {
     /* display: flex; */
@@ -34,6 +35,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     user-select: none;
+
 }
 
 

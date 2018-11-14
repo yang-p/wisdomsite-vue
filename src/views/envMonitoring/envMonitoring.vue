@@ -37,8 +37,9 @@
                     <div class="content-right__top__right">
                         <div class="card em-total">
                             <div class="box-card total-electric">
-                                <div class="box-card__header">
-                                    <span class="box-card__header__title icon-text icon-text-allelectric">总电量：</span>
+                                <div class="box-card__header total-electric__header">
+                                    <span class="box-card__header__title icon-text icon-text-allelectric total-electric__header__title">总电量：4,502,145</span>
+                                    <span>kw·h</span>
                                 </div>
                                 <div class="box-card__content total-electric__content">
                                     <div class="box-card total-electric__week">
@@ -61,10 +62,11 @@
                             </div>
                            
                             <div class="box-card total-watar">
-                                <div class="box-card__header">
-                                    <span class="box-card__header__title icon-text icon-text-allwater">总水量：</span>
+                                <div class="box-card__header total-watar__header">
+                                    <span class="box-card__header__title icon-text icon-text-allwater total-watar__header__title">总水量： 45,012</span>
+                                    <span>m³</span>
                                 </div>
-                                <div class="box-card__content">
+                                <div class="box-card__content total-watar__content">
                                     <div class="box-card total-watar__week">
                                         <div class="box-card__header">
                                             <span class="box-card__header__title em-total-title">近7天单日用水量（单日）</span>
@@ -87,21 +89,21 @@
                     </div>
                 </div>
                 <div class="content-right__bottom">
-                    <div class="card">
-                        <div class="box-card">
+                    <div class="card content-right__bottom__left">
+                        <div class="box-card" style="display:inline-block">
                             <div class="box-card__header">
                                 <span class="box-card__header__title"></span>
                             </div>
                             <div class="box-card__content"></div>
                         </div>
-                        <div class="box-card">
+                        <div class="box-card"  style="display:inline-block">
                             <div class="box-card__header">
                                 <span class="box-card__header__title"></span>
                             </div>
                             <div class="box-card__content"></div>
                         </div>                            
                     </div>
-                    <div class="card" style="margin-left: 20px;">
+                    <div class="card content-right__bottom__right" >
                         <div class="box-card">
                             <div class="box-card__header">
                                 <span class="box-card__header__title"></span>
@@ -137,11 +139,11 @@ export default {
         &__left {
             flex: 1;
             .flex-column;
+            height: 100%;
         }
         &__right {
             flex: 4;
-            width: 100%;
-          
+            height: 100%;
             .flex-column;
             .content-right__top {
                 display: flex;
@@ -155,9 +157,18 @@ export default {
                 }
             }
             .content-right__bottom {
-                flex: 1;
                 display: flex;
+                flex: 1;
                 margin-top: 20px;
+                &__left,
+                &__right {
+                    flex: 1;
+                    display: flex;
+                    height: 100%;
+                }
+                &__right {
+                    margin-left: 20px;
+                }
             }
         }
     }
@@ -182,10 +193,20 @@ export default {
         &-title {
             font-size: 1.2rem;
         }
-        .total-electric {
+        .total-electric {//总电量
             flex: 1;
+            &__header {
+                text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
+                font-size: 1rem;
+                color: #fff;
+                &__title {
+                    font-size: 1.6rem;
+                    color: #fff;
+                }
+            }
             &__content {
-
+                height: 80%;
+                .flex-column;
             }
             &__week {
 
@@ -194,11 +215,21 @@ export default {
 
             }
         }
-        .total-watar {
+        .total-watar {//总水量
             flex: 1;
             margin-top: 10px;
+            &__header {
+                text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
+                font-size: 1rem;
+                color: #fff;
+                &__title {
+                    font-size: 1.6rem;
+                    color: #fff;
+                }
+            }
              &__content {
-
+                height: 80%;
+                .flex-column;
             }
             &__week {
 
@@ -208,5 +239,6 @@ export default {
             }           
         }
     }
+
 }
 </style>

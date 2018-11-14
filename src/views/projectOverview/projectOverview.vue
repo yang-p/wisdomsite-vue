@@ -68,9 +68,12 @@
                     <div class="swiper-card__content">                        
                         <div class="swiper-container" ref="swiper_enginee">                                            
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="../../assets/images/swiper1.png"></div>
-                                <div class="swiper-slide"><img src="../../assets/images/swiper2.png" alt=""></div>
-                                <!-- <div class="swiper-slide"><img src="../../assets/images/project_drawing.png" alt=""></div> -->
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper2.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/swiper2.png')+')'}"></div>
+                                <div class="swiper-slide" :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></div>
                             </div>
                             <div class="swiper-button swiper-button-prev"></div>
                             <div class="swiper-button swiper-button-next"></div>
@@ -272,7 +275,8 @@ export default {
         SetSwiper.init(this.$refs.swiper_enginee,{//初始化swiper
             autoplay: this.ischecked,
             mousewheel: true,
-            // effect : 'fade',
+            grabCursor: true,
+            roundLengths: true
         })
         SetEcharts.init(this.$refs.pie2,'pie',this.pie2Opts,this.pieLegendParam)//初始化pie2
         SetEcharts.init(this.$refs.pie1,'pie',this.pie1Opts,this.pieLegendParam)//初始化pie1
@@ -353,11 +357,9 @@ export default {
             .swiper-slide {
                 width: 100%;
                 height:100%;
-                img {
-                    width: 100%;
-                    height: auto;
-                    max-width: 100%;
-                }
+                background-position: center center;
+                background-size: contain;
+                background-repeat: no-repeat;
             }
         .swiper-button {
             background-size: 80%;
