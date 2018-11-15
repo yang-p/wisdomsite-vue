@@ -294,7 +294,7 @@ export default {
     },
 }
 </script>
-// <style lang="less" scoped>
+ <style lang="less" scoped>
 @import '../../assets/css/variables.less';
 @import '../../assets/css/components.less';
 @import '../../assets/css/public.less';
@@ -335,6 +335,7 @@ export default {
     }
     .enginee-display {//工程展示
         flex: 4;
+        background: rgba(0,11,50,1);
         .swiper-card__topbar {
             height: 40px;
             color: #fff;

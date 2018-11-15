@@ -320,6 +320,7 @@ export default {
     }
     .qm-display {//质量管理--质量亮点展示
         flex: 3;
+        background: rgba(0,11,50,1);
         &__content {
             height: 100%;
             .swiper-container {

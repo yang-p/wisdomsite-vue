@@ -317,7 +317,6 @@
 .table-info {
     width: 100%;
     tr {  
-        // line-height: 20px;     
         td {
             vertical-align: middle;
             &:first-child {
@@ -332,8 +331,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        line-height: 30px;
+
+        line-height: 2.4rem;
         td {
+            font-size: 1rem;
             vertical-align: middle;
             &:first-child {
                 width: 80px;
@@ -356,5 +357,47 @@
                 text-align: right;
             }
         }
+    }
+}
+
+//text-strip组件
+.text-strip { 
+    width: 490px;
+    height: 30px;
+    display: flex;
+    border-radius: 10px;
+    span {
+        position: relative;
+        flex: 1;
+        font-size: 12PX;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        &::after {
+            content: attr(data-text);
+            display: block;
+            position: absolute;
+            bottom: -30px;
+            right: -10px;
+        }
+        &:nth-child(1) {
+            background-color: #0CBD5C;
+            &::before {
+                content: attr(data-text1);
+                display: block;
+                position: absolute;
+                bottom: -30px;
+                left: 0px;
+            }
+        }
+        &:nth-child(2) { background-color: #E5C63D;
+        }
+        &:nth-child(3) { background-color: #EB8504;
+        }
+        &:nth-child(4) { background-color: #EA3636;
+        }
+        &:nth-child(5) { background-color: #960453;
+        }
+        &:nth-child(6) { background-color: #61001D;}
     }
 }

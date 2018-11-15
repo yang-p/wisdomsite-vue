@@ -31,11 +31,11 @@
                         <div class="card__content labor-face__content">
                             <div class="labor-face__content__avatar">
                                 <div class="labor-face__avatar">
-                                    <div class="worker-avatar realTime-avatar"><img src="../../assets/images/worker_avatar1.png" alt=""></div>
+                                    <div class="worker-avatar realTime-avatar" :style="{'background-image':'url('+require('../../assets/images/worker_avatar1.png')+')'}"></div>
                                     <p>实时监控头像</p>
                                 </div>
                                 <div class="labor-face__avatar">
-                                    <div class="worker-avatar register-avatar"><img src="../../assets/images/worker_avatar2.png" alt=""></div>
+                                    <div class="worker-avatar register-avatar" :style="{'background-image':'url('+require('../../assets/images/worker_avatar2.png')+')'}"></div>
                                     <p>登记人头像</p>
                                 </div>
                             </div>                      
@@ -93,11 +93,8 @@
                     </div>
                   
                     <div class="card labor-curve">
-                        <div class="card__header">
-                            <span class="card__header__title">今日人力曲线</span>
-                        </div>
-                        <div class="card__content">
-
+                        <div class="card__content labor-curve__content" style="height: 90%;">
+                            <div style="height: 100%;" ref="line_cure"></div>
                         </div>
                     </div>
             </div>
@@ -110,10 +107,10 @@
                         <div class="dowebok1" style="height: 100%;">
                             <div class="box-card unit-info">
                                 <div class="box-card__header">
-                                    <span class="box-card__header__title">项目测试有限公司</span>
+                                    <span class="box-card__header__title unit-info__header__title">项目测试有限公司</span>
                                 </div>
                                 <div class="box-card__content">
-                                    <table class="table-info dowebok3" style="">
+                                    <table class="table-info dowebok3">
                                         <tr class="three-column">
                                             <td>到场人数</td>
                                             <td><span class="td-bgcolor-1" style="width: 100%;"></span></td>
@@ -150,7 +147,7 @@
 
                             <div class="box-card unit-info">
                                 <div class="box-card__header">
-                                    <span class="box-card__header__title">项目测试有限公司</span>
+                                    <span class="box-card__header__title unit-info__header__title">项目测试有限公司</span>
                                 </div>
                                 <div class="box-card__content">
                                     <table class="table-info">
@@ -190,7 +187,7 @@
 
                             <div class="box-card unit-info">
                                 <div class="box-card__header">
-                                    <span class="box-card__header__title">项目测试有限公司</span>
+                                    <span class="box-card__header__title unit-info__header__title">项目测试有限公司</span>
                                 </div>
                                 <div class="box-card__content">
                                     <table class="table-info">
@@ -236,8 +233,133 @@
 </template>
 <script>
 import $ from 'jquery'
+import Echarts from 'echarts'
 export default {
     name: 'LaborManagement',
+    data() {
+        return {
+            lineCureOpts: {
+                color: ['#F2B121','#51AEE0'],
+                title: {
+                    text: '今日人力曲线',
+                    textStyle: {
+                        color: '#fff',
+                        fontWeight: 'normal',
+                        fontSize: '16'
+                    }
+                },
+                grid: {
+                    left: 30,
+                    bottom: 20,
+                    width: '80%',
+                    height: '64%',
+                },
+                series: [
+                    {
+                        type: 'line',
+                        name: '管理人员',
+                        smooth: true,
+                        data: [3, 4, 5, 6, 8, 10]
+                    },
+                    {
+                        type: 'line',
+                        name: '劳务人员',
+                        smooth: true,
+                        data: [10, 2, 3, 7, 9, 1]
+                    }
+                ],
+                tooltip: {
+                    trigger: 'axis'
+                },
+                xAxis: {
+                    // show: false,
+                    type: 'category',
+                    data: [
+                            {
+                            value: '00:00',
+                            textStyle: {
+                                color: '#82a9ba',
+                                verticalAlign: 'top'
+                            }
+                        },
+                            {
+                            value: '02:00',
+                            textStyle: {
+                                color: '#82a9ba'
+                            }
+                        },
+                            {
+                            value: '04:00',
+                            textStyle: {
+                                color: '#82a9ba'
+                            }
+                        },
+                            {
+                            value: '06:00',
+                            textStyle: {
+                                color: '#82a9ba'
+                            }
+                        },
+                            {
+                            value: '08:00',
+                            textStyle: {
+                                color: '#82a9ba'
+                            }
+                        },
+                            {
+                            value: '10:00',
+                            textStyle: {
+                                color: '#82a9ba'
+                            }
+                        }
+                        ],
+                    boundaryGap: false,
+                    
+                    nameTextStyle: {
+                        color: '#fff'
+                    },
+                    boundaryGap: ['20%','10%'],
+                    axisLine: {
+                        show: false,
+                    },
+                    onZero: false
+                },
+                yAxis: {
+                    type: 'value',
+                    name: '劳动力（人）',
+                    nameLocation: 'center',
+                    nameTextStyle: {
+                        color: '#82a9ba',
+                        fontSize: 10
+                    },
+                    minInterval: 1,
+                    axisLine: {
+                        show: false,
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: '#316180'
+                        }
+                    }
+
+                },
+                legend: {
+                    right: 0,
+                    top: 20,
+                    orient: 'vertical',
+
+                    textStyle: {
+                        color: '#82a9ba',
+                        fontSize: 12
+                    },
+                    data: [
+                        {name: '管理人员',icon: 'roundRect'},
+                        {name: '劳务人员',icon: 'roundRect'}
+                    ]
+                }
+            }
+        }
+    },
     mounted () {
         $(function(){//
             $('.dowebok1').liMarquee({//初始化liMarquee
@@ -247,6 +369,11 @@ export default {
                 loop: -1
             });
         });
+        //获取今日人力曲线线图容器
+        let lineCure = this.$refs.line_cure
+        //初始化今日人力曲线线图
+       let lineCureEchart =  Echarts.init(lineCure)
+       lineCureEchart.setOption(this.lineCureOpts)
     }
 
 }
@@ -263,7 +390,9 @@ export default {
         &__left,
         &__center {
            .flex-column;
-
+        }
+        &__center {
+            // overflow: hidden;
         }
     }
     .labor-worker {//劳务---人员
@@ -295,14 +424,15 @@ export default {
         margin-top: 20px;
     }
     .labor-face {//劳务---人脸识别
-        flex: 3;
+        // flex: 3;
+        height: 70%;
         &__content {
             .flex-column;
             height: 100%;
             margin-top: 30px;
             &__avatar {
                 display: flex;
-                flex: 3;
+                height: 60%;
                 justify-content: space-around;
                 border-bottom: 1px solid #316180;
                 .labor-face__avatar {
@@ -311,19 +441,17 @@ export default {
                 }
                 .worker-avatar {
                     height: 200px;
+                    background-size: 100%;
+                    background-repeat: no-repeat;
                     border: 2px solid #4891BE;
                     overflow: hidden;
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
                 }
                 .worker-avatar + p {
                     color: #DBF0F8;
-                    text-shadow: 0px 0px 2px #fff, 0px 0px 3px #fff;
+                    text-shadow:  0px 0px 1px #fff;
                 }
                 .realTime-avatar {
-                    width: 280px;           
+                    width: 320px;           
                 }
                 .register-avatar {
                     width: 140px;
@@ -331,12 +459,12 @@ export default {
             }
             .worker-info {
                 display: flex;
-                flex: 2;
+                // flex: 2;
+                height: 40%;
                 color: #D3D4D4;
                 padding: 20px;
                 &__left {
                     flex: 1;
-
                 }
                 &__right {
                     flex: 1;
@@ -359,14 +487,15 @@ export default {
                     }
                 }
             }           
-        }
-        
-        background: rgba(0,11,50,.8);
-
+        }      
+        background: rgba(0,11,50,.6);
     }
     .labor-curve {//劳务---今日人力曲线
-        flex: 1;
+        height: 30%;
         margin-top: 20px;
+        &__content {
+            height: 70%;
+        }
     }
     .labor-unit {//劳务---分包单位
         height: 100%;
@@ -381,11 +510,16 @@ export default {
                 flex: 1;
                 border-bottom: 1px solid #316180;
                 cursor: pointer;
+                &__header__title {
+                    font-size: 1.2rem;
+                    text-shadow: 0px 0px 1px #fff, 0px 0px 3px #fff;
+                }
                 &:last-child {
                     border-bottom: none;
                 }
                 .table-info {
                     font-size:1rem;
+                    color: #82a9ba;
                     height: 140px;
                     margin-top: 10px;
                 }

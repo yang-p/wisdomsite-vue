@@ -27,6 +27,24 @@
 .margin-top-30 {
   margin-top: 30px;
 }
+.td-bgcolor-1 {
+  background-color: #51AEE0;
+}
+.td-bgcolor-2 {
+  background-color: #F3BB23;
+}
+.td-bgcolor-3 {
+  background-color: #DC6AA8;
+}
+.td-bgcolor-4 {
+  background-color: #85F58F;
+}
+.td-bgcolor-5 {
+  background: linear-gradient(#385EAA, #523C94);
+}
+.td-bgcolor-6 {
+  background-color: #E46262;
+}
 .icon-circle-icon1 {
   background-image: url(../images/icon/icon_cir1.png);
 }
@@ -265,52 +283,6 @@
 .time-zone {
   height: 100px;
   border: 1px solid red;
-}
-.text-strip {
-  width: 490px;
-  height: 30px;
-  display: flex;
-  border-radius: 10px;
-}
-.text-strip span {
-  position: relative;
-  flex: 1;
-  font-size: 12PX;
-  color: #fff;
-  text-align: center;
-  line-height: 30px;
-}
-.text-strip span::after {
-  content: attr(data-text);
-  display: block;
-  position: absolute;
-  bottom: -30px;
-  right: -10px;
-}
-.text-strip span:nth-child(1) {
-  background-color: #0CBD5C;
-}
-.text-strip span:nth-child(1)::before {
-  content: attr(data-text1);
-  display: block;
-  position: absolute;
-  bottom: -30px;
-  left: 0px;
-}
-.text-strip span:nth-child(2) {
-  background-color: #E5C63D;
-}
-.text-strip span:nth-child(3) {
-  background-color: #EB8504;
-}
-.text-strip span:nth-child(4) {
-  background-color: #EA3636;
-}
-.text-strip span:nth-child(5) {
-  background-color: #960453;
-}
-.text-strip span:nth-child(6) {
-  background-color: #61001D;
 }
 /* 封装原始组合样式
     ========================================================================== */

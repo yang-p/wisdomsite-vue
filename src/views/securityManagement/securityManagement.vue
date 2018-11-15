@@ -307,6 +307,7 @@ export default {
     }
     .qm-display {//安全管理--安全展示
         flex: 3;
+        background: rgba(0,11,50,1);
         &__content {
             height: 100%;
             .swiper-container {
