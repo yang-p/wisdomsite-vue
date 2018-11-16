@@ -8,6 +8,7 @@ import './assets/css/globalstyle.css'
 import './assets/css/liMarquee.css'
 import './assets/js/components'
 import 'swiper/dist/css/swiper.min.css'
+import 'animate.css'
 
 Vue.config.productionTip = false
 

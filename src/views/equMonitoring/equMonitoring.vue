@@ -9,12 +9,19 @@
                                 <span class="box-card__header__title">项目工程图</span>
                             </div>
                             <div class="box-card__content pro-draw__content">
-                                <ul class="pro-draw__content__list">                                 
-                                    <li :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></li>
-                                    <!-- <li :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></li>
-                                    <li :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></li>
-                                    <li :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></li>
-                                    <li :style="{'background-image':'url('+require('../../assets/images/swiper1.png')+')'}"></li> -->
+                                <ul class="pro-draw__content__list"> 
+                                    <transition-group
+                                    mode="out-in"
+                                    enter-active-class = "animated slideInLeft"
+                                    leave-active-class = "animated slideOutLeft">
+                                        <li 
+                                        v-for="(item, index) in tabContent" 
+                                        :key = "index" 
+                                        v-show="tabIndex === index" 
+                                        :style="{'background-image': 'url('+ item.imgUrl +')'}">
+                                            <div class="position-icon"><img :src = 'item.iconUrl' ></div>
+                                        </li>                                         
+                                    </transition-group> 
                                 </ul>
                             </div>
                         </div>
@@ -26,31 +33,11 @@
                                 <span class="box-card__header__title">相关设备</span>
                             </div>
                             <div class="box-card__content related-equ__content">
-                                <ul class="flex-between">
-                                    <li class="icon-circle">
-                                        <div class="icon-circle__graph icon-circle-icon1"></div>
-                                        <p class="icon-circle__title">深基坑-14</p>
-                                    </li>
-                                    <li class="icon-circle">
-                                        <div class="icon-circle__graph icon-circle-icon2"></div>
-                                        <p class="icon-circle__title">高支模-2</p>
-                                    </li>
-                                    <li class="icon-circle">
-                                        <div class="icon-circle__graph icon-circle-icon3"></div>
-                                        <p class="icon-circle__title">塔吊-6</p>
-                                    </li>
-                                    <li class="icon-circle">
-                                        <div class="icon-circle__graph icon-circle-icon4"></div>
-                                        <p class="icon-circle__title">卸料平台-5</p>
-                                    </li>
-                                    <li class="icon-circle">
-                                        <div class="icon-circle__graph icon-circle-icon5"></div>
-                                        <p class="icon-circle__title">养护室-8</p>
-                                    </li>
-                                    <li class="icon-circle">
-                                        <div class="icon-circle__graph icon-circle-icon6"></div>
-                                        <p class="icon-circle__title">工作电梯-9</p>
-                                    </li>
+                                <ul class="flex-between">                                    
+                                    <li class="icon-circle" v-for="(item, index) in tabPage" :key="index" @click = "changeTab(index)">
+                                        <div class="" :class = "[tabIndex === index ? 'icon' + index : 'icon-circle-icon'+ index ,tabIndex === index ? 'active': 'icon-circle__graph']"></div>
+                                        <p class="icon-circle__title">{{item.title}}</p>
+                                    </li>                                    
                                 </ul>
                             </div>
                         </div>
@@ -78,6 +65,62 @@
 <script>
 export default {
     name: 'EquMonitoring',
+    data() {
+        return {
+            tabPage: [//相关设备数据
+                {
+                    title: '深基坑-14'
+                },
+                {
+                    title: '高支模-2'
+                },
+                {
+                    title: '塔吊-6'
+                }, 
+                {
+                    title: '卸料平台-5'
+                },
+                {
+                    title: '养护室-8'
+                },
+                {
+                    title: '工作电梯-9'
+                },          
+            ],
+            tabContent: [//项目工程图内容
+                {
+                    imgUrl: require('../../assets/images/project_drawing.png'),
+                    iconUrl: require('../../assets/images/icon/icon_classify.png')
+                },
+                {
+                    imgUrl: require('../../assets/images/swiper1.png'),
+                    iconUrl: require('../../assets/images/icon/icon_monitor.png')
+                },
+                {
+                    imgUrl: require('../../assets/images/swiper2.png'),
+                    iconUrl: require('../../assets/images/icon/icon_smoke.png')
+                },
+                {
+                    imgUrl: require('../../assets/images/project_drawing.png'),
+                    iconUrl: require('../../assets/images/icon/icon_env.png')
+                },
+                {
+                    imgUrl: require('../../assets/images/swiper1.png'),
+                    iconUrl: require('../../assets/images/icon/icon_electric.png')
+                },
+                {
+                    imgUrl: require('../../assets/images/swiper2.png'),
+                    iconUrl: require('../../assets/images/icon/icon_watermeter.png')
+                },                    
+            ],
+            tabIndex: 0,
+        }
+    },
+    methods: {
+        changeTab(tabIndex) {
+            this.tabIndex = tabIndex
+        }
+    }
 }
 </script>
 
@@ -109,7 +152,13 @@ export default {
                             width: 100%;
                             height: 100%;
                             background-repeat: no-repeat;
-                            background-size: contain;                           
+                            background-size: contain; 
+                            .position-icon {
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%,-50%);
+                            }                         
                         }
                     }
                 }
@@ -135,37 +184,74 @@ export default {
                 li {
                     .icon-circle__graph {
                         background-size: 60%;
+                        border: 2px solid #1C3778;
                     }
-                        transition: all .3s linear;  
+                    
                     &:hover .icon-circle__title{
                         color: #fff;
                         text-shadow: 0px 0px 8px #fff, 0px 0px 16px #fff;
-                            transition: all .2s linear;
+                        transition: all .2s linear;
                     }
                     &:hover .icon-circle__graph {
-                        box-shadow: 0 0 2px linear-gradient(135deg,#0F223F,#0F223F),linear-gradient(135deg,#3660AC,#513D95);
-                        transition: all .3s linear;
-                        box-sizing: border-box;
+                        border:2px solid #513D95;
                     }
-                    &:nth-child(1):hover .icon-circle__graph{                            
-                        .icon-circle-icon1-act;                                                     
+                    &:hover {
+                        .icon-circle-icon0{                            
+                            .icon-circle-icon0-act;                                          
+                        }
+                        .icon-circle-icon1{
+                            .icon-circle-icon1-act;
+                        }
+                        .icon-circle-icon2{
+                            .icon-circle-icon2-act;                             
+                        }
+                        .icon-circle-icon3{
+                            .icon-circle-icon3-act;                         
+                        }
+                        .icon-circle-icon4{
+                            .icon-circle-icon4-act;                       
+                        }
+                        .icon-circle-icon5{
+                            .icon-circle-icon5-act;                      
+                        }
                     }
-                    &:nth-child(2):hover .icon-circle__graph{
+                    transition: all .3s linear;
+                    .active {
+                            width: 50px;
+                            height: 62px;
+                            background-color: #0B2A5E;
+                            border-radius: 50%;
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                            background-size: 60%;
+                            border:2px solid #513D95;
+                        & + .icon-circle__title{
+                            color: #fff;
+                            text-shadow: 0px 0px 8px #fff, 0px 0px 16px #fff;
+                            transition: all .2s linear;
+                        } 
+                        transition: all .2s linear;             
+                    }
+                    .icon0 {
+                        .icon-circle-icon0-act;
+                    }
+                    .icon1 {
+                        .icon-circle-icon1-act;
+                    }
+                    .icon2 {
                         .icon-circle-icon2-act;
                     }
-                    &:nth-child(3):hover .icon-circle__graph{
-                        .icon-circle-icon3-act;                             
+                    .icon3 {
+                        .icon-circle-icon3-act;
                     }
-                    &:nth-child(4):hover .icon-circle__graph{
-                        .icon-circle-icon4-act;                         
+                    .icon4 {
+                        .icon-circle-icon4-act;
                     }
-                    &:nth-child(5):hover .icon-circle__graph{
-                        .icon-circle-icon5-act;                       
-                    }
-                    &:nth-child(6):hover .icon-circle__graph{
-                        .icon-circle-icon6-act;                      
+                    .icon5 {
+                        .icon-circle-icon5-act;
                     }
                 }
+
             }
         }      
     }
@@ -175,6 +261,7 @@ export default {
         margin-top: 20px;
         &__content {
             height: 84%;
+            padding-top: 10px;
             &__list {
                 .flex-column;
                 height: 100%;

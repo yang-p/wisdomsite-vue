@@ -9,8 +9,19 @@
                                 <span class="box-card__header__title">项目工程图</span>
                             </div>
                             <div class="box-card__content pro-draw__content">
-                                <ul class="pro-draw__content__list">
-                                    <li :style="{'background-image':'url('+require('../../assets/images/project_drawing.png')+')'}"></li>
+                                <ul class="pro-draw__content__list" >
+                                    <transition-group
+                                    mode="out-in"
+                                    enter-active-class = "animated slideInLeft"
+                                    leave-active-class = "animated slideOutLeft">
+                                        <li 
+                                        v-for="(item, index) in tabContent" 
+                                        :key = "index" 
+                                        v-show="tabIndex === index" 
+                                        :style="{'background-image': 'url('+ item.imgUrl +')'}">
+                                            <div class="position-icon"><img :src = 'item.iconUrl' ></div>
+                                        </li> 
+                                    </transition-group>                                
                                 </ul>
                             </div>
                         </div>
@@ -22,14 +33,11 @@
                                 <span class="box-card__header__title">监控设备</span>
                             </div>
                             <div class="box-card__content monitor-equ__content">
-                                <ul class="monitor-equ__list">
-                                    <li><a href="javaScript:;" class="icon-text icon-text-classify">所有</a></li>
-                                    <li><a href="javaScript:;" class="icon-text icon-text-monitor">视频</a></li>
-                                    <li><a href="javaScript:;" class="icon-text icon-text-smoke">智能烟感</a></li>
-                                    <li><a href="javaScript:;" class="icon-text icon-text-env">环境监测</a></li>
-                                    <li><a href="javaScript:;" class="icon-text icon-text-electric">智能电表</a></li>
-                                    <li><a href="javaScript:;" class="icon-text icon-text-watermeter">智能水表</a></li>                                   
-                                </ul>
+                                <ul class="monitor-equ__list">                                                  
+                                    <li v-for = "(item,index) in tabPage" :key = index class = "acitve" @click = 'chooseTab(index)'>
+                                        <a href="javaScript:;" class="icon-text" :class="item.icon">{{item.title}}</a>
+                                    </li>
+                                </ul>                          
                             </div>
                         </div>
                         <div class="box-card today-warn">
@@ -71,6 +79,65 @@
 import $ from 'jquery'
 export default {
     name: 'RealTimeMonitoring',
+    data() {
+        return {           
+                tabPage: [
+                    {
+                        title: '所有',
+                        icon: 'icon-text-classify'
+                    },
+                    {
+                        title: '视频',
+                        icon: 'icon-text-monitor'
+                    },
+                    {
+                        title: '智能烟感',
+                        icon: 'icon-text-smoke'
+                    },
+                    {
+                        title: '环境监测',
+                        icon: 'icon-text-env'
+                    },
+                    {
+                        title: '智能电表',
+                        icon: 'icon-text-electric'
+                    },
+                    {
+                        title: '智能水表',
+                        icon: 'icon-text-watermeter'
+                    },
+                ],
+                tabContent: [
+                    {
+                        imgUrl: require('../../assets/images/project_drawing.png'),
+                        iconUrl: require('../../assets/images/icon/icon_classify.png')
+                    },
+                    {
+                        imgUrl: require('../../assets/images/swiper1.png'),
+                        iconUrl: require('../../assets/images/icon/icon_monitor.png')
+                    },
+                    {
+                        imgUrl: require('../../assets/images/swiper2.png'),
+                        iconUrl: require('../../assets/images/icon/icon_smoke.png')
+                    },
+                    {
+                        imgUrl: require('../../assets/images/project_drawing.png'),
+                        iconUrl: require('../../assets/images/icon/icon_env.png')
+                    },
+                    {
+                        imgUrl: require('../../assets/images/swiper1.png'),
+                        iconUrl: require('../../assets/images/icon/icon_electric.png')
+                    },
+                    {
+                        imgUrl: require('../../assets/images/swiper2.png'),
+                        iconUrl: require('../../assets/images/icon/icon_watermeter.png')
+                    },                    
+                ],
+                tabIndex: 0, //当前选中状态下的tabPage的索引值，默认为0
+                // tabPageAcitve: 0//是否为当前选中状态
+            
+        }
+    },
     mounted () {
         $(function(){//
             $('.dowebok1').liMarquee({//初始化liMarquee
@@ -80,6 +147,11 @@ export default {
                 loop: -1
             });
         });
+    },
+    methods: {
+        chooseTab(tabIndex) {
+            this.tabIndex = tabIndex
+        }
     }
 
 }
@@ -113,7 +185,13 @@ export default {
                             width: 100%;
                             height: 100%;
                             background-repeat: no-repeat;
-                            background-size: contain;  
+                            background-size: contain; 
+                            .position-icon {
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%,-50%);
+                            }
                         }
                     }
                 }
@@ -129,10 +207,8 @@ export default {
                 flex: 2;
                 &__content {
                     margin-top: 10px;
-
                 }
                 &__list {
-
                     li {
                         padding: 4px 10px;
                         margin-bottom: 2px;
@@ -140,40 +216,50 @@ export default {
                         background-color: #0B2A5E;
                         border: 2px solid #1C3778;
                         border-radius: 4px;
-                        transition: all .2s linear;
-                        &:nth-child(1):hover .icon-text::before{
-                            .icon-text-classify_active;
+                        &:hover {
+                            background-clip:padding-box,border-box;
+                            background-origin:padding-box,border-box;
+                            background-image:linear-gradient(135deg,#0F223F,#0F223F),linear-gradient(135deg,#3660AC,#513D95);
+                            border:2px transparent solid;
+                            transition: all .2s linear;
+                            background-repeat: no-repeat;
+                            .icon-text-classify::before{
+                                .icon-text-classify_active;
+                            }
+                            .icon-text-monitor::before{
+                            .icon-text-monitor_active;
+                            }
+                            .icon-text-smoke::before{
+                                .icon-text-smoke_active;
+                            }
+                            .icon-text-env::before{
+                                .icon-text-env_active;
+                            }
+                            .icon-text-electric::before{
+                                .icon-text-electric_active;
+                            }
+                            .icon-text-watermeter::before{
+                                .icon-text-watermeter_active;
+                            }
                         }
-                        &:nth-child(2):hover .icon-text::before{
-                           .icon-text-monitor_active;
+                    }
+                    .active {
+                        &:hover {
+                            background-clip:padding-box,border-box;
+                            background-origin:padding-box,border-box;
+                            background-image:linear-gradient(135deg,#0F223F,#0F223F),linear-gradient(135deg,#3660AC,#513D95);
+                            border:2px transparent solid;
+                            transition: all .2s linear;
+                            background-repeat: no-repeat;
                         }
-                        &:nth-child(3):hover .icon-text::before{
-                            .icon-text-smoke_active;
+                        &:hover a {
+                            color: #fff;
+                            text-shadow: 0px 0px 2px #fff, 0px 0px 4px #fff;
+                            transition: all .2s linear;
                         }
-                        &:nth-child(4):hover .icon-text::before{
-                            .icon-text-env_active;
-                        }
-                        &:nth-child(5):hover .icon-text::before{
-                            .icon-text-electric_active;
-                        }
-                        &:nth-child(6):hover .icon-text::before{
-                            .icon-text-watermeter_active;
-                        }
+
                     }
 
-                    li:hover {
-                        background-clip:padding-box,border-box;
-                        background-origin:padding-box,border-box;
-                        background-image:linear-gradient(135deg,#0F223F,#0F223F),linear-gradient(135deg,#3660AC,#513D95);
-                        border:2px transparent solid;
-                        transition: all .2s linear;
-                        background-repeat: no-repeat;
-                    }
-                    li:hover a {
-                        color: #fff;
-                        text-shadow: 0px 0px 2px #fff, 0px 0px 4px #fff;
-                        transition: all .2s linear;
-                    }
                 }
             }
             .today-warn {//监控设备---今日报警

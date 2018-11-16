@@ -45,22 +45,22 @@
 .td-bgcolor-6 {
   background-color: #E46262;
 }
-.icon-circle-icon1 {
+.icon-circle-icon0 {
   background-image: url(../images/icon/icon_cir1.png);
 }
-.icon-circle-icon2 {
+.icon-circle-icon1 {
   background-image: url(../images/icon/icon_cir2.png);
 }
-.icon-circle-icon3 {
+.icon-circle-icon2 {
   background-image: url(../images/icon/icon_cir3.png);
 }
-.icon-circle-icon4 {
+.icon-circle-icon3 {
   background-image: url(../images/icon/icon_cir4.png);
 }
-.icon-circle-icon5 {
+.icon-circle-icon4 {
   background-image: url(../images/icon/icon_cir5.png);
 }
-.icon-circle-icon6 {
+.icon-circle-icon5 {
   background-image: url(../images/icon/icon_cir6.png);
 }
 .icon-text-pm25::before {
