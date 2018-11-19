@@ -34,7 +34,7 @@
                             </div>
                             <div class="box-card__content monitor-equ__content">
                                 <ul class="monitor-equ__list">                                                  
-                                    <li v-for = "(item,index) in tabPage" :key = index class = "acitve" @click = 'chooseTab(index)'>
+                                    <li v-for = "(item,index) in tabPage" :key = index :class="[tabIndex === index ? 'active':'']" @click = 'chooseTab(index)'>
                                         <a href="javaScript:;" class="icon-text" :class="item.icon">{{item.title}}</a>
                                     </li>
                                 </ul>                          
@@ -243,16 +243,32 @@ export default {
                             }
                         }
                     }
-                    .active {
-                        &:hover {
+                    .active {                       
                             background-clip:padding-box,border-box;
                             background-origin:padding-box,border-box;
                             background-image:linear-gradient(135deg,#0F223F,#0F223F),linear-gradient(135deg,#3660AC,#513D95);
                             border:2px transparent solid;
                             transition: all .2s linear;
-                            background-repeat: no-repeat;
-                        }
-                        &:hover a {
+                            background-repeat: no-repeat; 
+                            .icon-text-classify::before{
+                                .icon-text-classify_active;
+                            }
+                            .icon-text-monitor::before{
+                            .icon-text-monitor_active;
+                            }
+                            .icon-text-smoke::before{
+                                .icon-text-smoke_active;
+                            }
+                            .icon-text-env::before{
+                                .icon-text-env_active;
+                            }
+                            .icon-text-electric::before{
+                                .icon-text-electric_active;
+                            }
+                            .icon-text-watermeter::before{
+                                .icon-text-watermeter_active;
+                            }                      
+                         a {
                             color: #fff;
                             text-shadow: 0px 0px 2px #fff, 0px 0px 4px #fff;
                             transition: all .2s linear;

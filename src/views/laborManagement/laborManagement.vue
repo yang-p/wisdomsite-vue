@@ -20,9 +20,9 @@
                     <div class="card__header">
                         <span class="card__header__title">工种</span>
                     </div>
-                    <div class="card__content">
-
-                    </div>
+                    <div class="card__content" style="height:85%;">
+                        <div style="height: 100%;" ref="pie_problem"></div>
+                    </div> 
                 </div>   
             </div>             
             <div class="content__wrapper__center">
@@ -234,10 +234,12 @@
 <script>
 import $ from 'jquery'
 import Echarts from 'echarts'
+import {SetEcharts} from '../../assets/js/tools.js'
 export default {
     name: 'LaborManagement',
     data() {
         return {
+
             lineCureOpts: {
                 color: ['#F2B121','#51AEE0'],
                 title: {
@@ -327,7 +329,15 @@ export default {
                 yAxis: {
                     type: 'value',
                     name: '劳动力（人）',
-                    nameLocation: 'center',
+                    nameLocation: 'start',
+                    nameGap: 8,
+                    // lineStyle: {
+                    //     color: '#fff',
+                    // },
+                    axisLabel: {
+                        color: '#82a9ba',
+                        fontSize: 10
+                    },
                     nameTextStyle: {
                         color: '#82a9ba',
                         fontSize: 10
@@ -357,7 +367,32 @@ export default {
                         {name: '劳务人员',icon: 'roundRect'}
                     ]
                 }
-            }
+            },
+            pieProblemOpts: {//问题分布配置参数
+                color: ['#0CBD5C','#EA3636','#E5C63D','#EB8504'],
+                series: [
+                    {
+                        name: '问题分布',
+                        radius: ['30%','50%'],
+                        center: ['50%','30%'],
+                        data: [
+                            {value:37,name:'施工用电'},
+                            {value:25,name:'基坑工程'},
+                            {value: 19,name: '安全管理'},
+                            {value: 42,name: '文明施工'}
+                        ],
+                        label: {
+                            show: true
+                        }
+                    }
+                ],
+                legend: {
+                    left: '0',
+                    top: '70%',
+                    align: 'left',
+                    orient: 'horizontal',                 
+                } 
+            },
         }
     },
     mounted () {
@@ -374,6 +409,10 @@ export default {
         //初始化今日人力曲线线图
        let lineCureEchart =  Echarts.init(lineCure)
        lineCureEchart.setOption(this.lineCureOpts)
+
+
+        let pieProblem = this.$refs.pie_problem //获取问题分布饼图的容器
+        SetEcharts.init(pieProblem,'pie',this.pieProblemOpts)//初始化问题分布饼图
     }
 
 }

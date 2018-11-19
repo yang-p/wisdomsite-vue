@@ -56,13 +56,19 @@
                         </div>
                         <span>全景图片</span>
                         <div class="swiper-card__topbar__right"> 
-                            <span>2018-05-24</span>
-                            <!-- <ul>
-                                <li>2018-05-20</li>
-                                <li>2018-05-21</li>
-                                <li>2018-05-22</li>
-                                <li>2018-05-23</li>
-                            </ul> -->
+                            <span class="swiper-card__topbar__time"  @click="showList">2018-05-24</span>
+                            
+                                <transition-group                                  
+                                    enter-active-class = "animated fadeIn"
+                                    leave-active-class = "animated fadeOut">
+                                    <ul class="swiper-card__topbar__list" v-show="isShowList" :key="999">
+                                        <li :key="0">2018-05-20</li>
+                                        <li :key="1">2018-05-21</li>
+                                        <li :key="2">2018-05-22</li>
+                                        <li :key="3">2018-05-23</li>
+                                    </ul>
+                                </transition-group>
+                            
                         </div>                        
                     </div> 
                     <div class="swiper-card__content">                        
@@ -85,22 +91,32 @@
                         <div class="card__header enginee-progress__header">
                             <span class="card__header-title">工程进度</span>
                         </div>
-                        <div class="card__content">
-                            <!-- <ul>
-                                <li>工程名称<span>深圳恒大中心</span></li>
-                                <li>建设单位<span>恒大集团有限公司</span></li>
-                                <li>监理单位<span>上海市建设工程咨询监理有限公司</span></li>
-                                <li>施工单位<span>中国建筑第四工程局有限公司</span></li>
-                                <li>设计单位<span>深圳市岩土工程有限公司</span></li>
-                                <li>项目功能<span>写字楼</span></li>
-                                <li>建筑面积<span>288000㎡</span></li>
-                            </ul>                                    -->
+                        <div class="card__content enginee-progress__content">
+                            <div class="progress-bar">
+                                <div class="progress-bar__text progress-bar__text__start">已施工（天）</div>
+                                <div class="progress-bar__text progress-bar__text__end">总工期（天）</div>
+                                <div class="progress-bar__wrapper">
+                                    <ul class="progress-bar__list">
+                                        <li data-date="2018/2/1" class="active"></li>
+                                        <li data-date="2019/2/1" class="active"></li>
+                                        <li data-date="2020/9/28"></li>
+                                        <li data-date="2021/1/16"></li>
+                                        <li data-date="2021/4/4"></li>
+                                        <li data-date="2022/3/2"></li>
+                                    </ul>
+                                    <div class="progress-bar__line">
+                                        <span class="progress-bar__line__top"></span>
+                                    </div>
+                                    <div class="progress-bar__btn progress-bar__btn__prev"></div>
+                                    <div class="progress-bar__btn progress-bar__btn__next"></div>
+                                </div>
+                            </div>
                         </div>
                 </div>
             </div>
             <div class="content__wrapper__right">
                 <div class="card q-s-labor">
-                    <div class="card__top-title">质量安全与劳务</div>
+                    <div class="card__top-title">质量安全与劳务</div> 
                     <div class="card__content q-s-labor__content">
                         <div class="box-card quality">
                             <div class="box-card__header">
@@ -260,7 +276,8 @@ export default {
             },
             pieLegendParam: {
                 unity: '项'
-            }
+            },
+            isShowList: false
         }
     },
     mounted() {
@@ -290,6 +307,13 @@ export default {
                this.ischecked = true            
             }
             SetSwiper.isAutoPlay(this.ischecked)
+        },
+        showList() {
+            if(this.isShowList) {
+                this.isShowList = false
+            }else {
+                this.isShowList = true
+            }
         }
     },
 }
@@ -335,7 +359,7 @@ export default {
     }
     .enginee-display {//工程展示
         flex: 4;
-        background: rgba(0,11,50,1);
+        background: rgba(0,11,50,.6);
         .swiper-card__topbar {
             height: 40px;
             color: #fff;
@@ -348,6 +372,40 @@ export default {
             }
             &__right {
                 float: right;
+                
+            }
+            &__time {
+                position: relative;
+               cursor: pointer;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: -25%;
+                    top: 20%;                  
+                    transform: translate(0,-50%);
+                    color: #fff;
+                    width: 10px;
+                    height: 10px;
+                    background-image: url(../../assets/images/icon/icon_btnnext.png);
+                    background-size: 50%;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    transform: rotate(90deg);
+                }
+            }
+            &__list {
+                position: absolute;
+                width: 80px;
+                color: #fff;
+                background: rgba(0,0,0,.4);
+                li {
+                    animation: all .2s linear;
+                    &:hover {
+                        cursor: pointer;
+                        background: rgba(0,0,0,8);
+                        animation: all .2s linear;
+                    }
+                }
             }
         }
         .swiper-container {
@@ -362,14 +420,20 @@ export default {
                 background-size: contain;
                 background-repeat: no-repeat;
             }
-        .swiper-button {
-            background-size: 80%;
+        .swiper-button {           
             background: rgba(0,0,0,.4);
             background-position: center center;
             background-repeat: no-repeat;
+            background-size: 50%;
             }
-        .swiper-button-next { background-image: url(../../assets/images/icon/swiper_btn_next.png);}
-        .swiper-button-prev { background-image: url(../../assets/images/icon/swiper_btn_prev.png);}            
+        .swiper-button-next { 
+            right: 0;
+            background-image: url(../../assets/images/icon/swiper_btn_next.png);
+            }
+        .swiper-button-prev { 
+            left: 0;
+            background-image: url(../../assets/images/icon/swiper_btn_prev.png);
+            }            
         }
     }
     .enginee-progress {//工程进度
@@ -379,7 +443,11 @@ export default {
         background-size: 100%;
         background-position: center center;
         &__header {
-            margin: 10px 0 10px;
+            margin: 10px 0 0;
+        }
+        &__content {
+            height: 64%;
+            color: #fff;
         }
     }
     .q-s-labor {//质量安全与劳务    

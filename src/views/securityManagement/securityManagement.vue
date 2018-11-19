@@ -87,15 +87,15 @@
                     <div class="card__header">
                         <span class="card__header__title">检查累计</span>
                     </div>
-                    <div class="card__content" style="height:80%;">
-                        <div class="pie-wrapper" style="height: 100%;">
-                            <div style="height:80%;" ref="pie_inspect"></div>
-                            <div class="flex-sparound pie-wrapper__bottom">
+                   <div class="card__content" style="height:80%;">
+                        <div class="pie-wrapper" style="height: 180px;">
+                            <div style="height:80%;" ref="pie1"></div>
+                            <div class="flex-sparound pie-wrapper__bottom" style="color: #82A9BA;">
                                 <div><span>检查总数</span><span>261项</span></div>
                                 <div><span>合格</span><span>26项</span></div>
                             </div>
                         </div>
-                    </div>
+                   </div>
                 </div>
             </div>
             <div class="content__wrapper__center">
@@ -183,15 +183,42 @@ export default {
     name: 'SecurityManagement',
     data() {
         return {
-            pieInspectOpts: {//检查累计配置参数
+            pie1Opts: {//质量饼图的配置参数            
                 title: {
                     text: '整改率',
-                    subtext: '96%',
+                    subtext: '99%',
                 },
+                color: [
+                    {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 0,
+                        y2: 1,
+                        colorStops: [{
+                            offset: 0, color: '#3D58A6' // 0% 处的颜色
+                        }, {
+                            offset: 1, color: '#523C95' // 100% 处的颜色
+                        }],
+                        globalCoord: false // 缺省为 false
+                    },
+                    {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 0,
+                        y2: 1,
+                        colorStops: [{
+                            offset: 0, color: '#F4C424' // 0% 处的颜色
+                        }, {
+                            offset: 1, color: '#EE8E1C' // 100% 处的颜色
+                        }],
+                        globalCoord: false // 缺省为 false
+                    } 
+                ],
                 series: [
                     {
-                        name: '检查累计',
-                        center: ['50%','40%'],
+                        name: '质量',
                         data: [
                             {value:217,name:'已整改'},
                             {value:25,name:'整改中'}
@@ -200,10 +227,10 @@ export default {
                 ],
                 legend: {
                     right: '0',
-                    top: '20%',                                   
+                    top: '25%',
+                    orient: 'vertical'                   
                 } 
-
-            },
+            },   
             pieProblemOpts: {//问题分布配置参数
                 color: ['#0CBD5C','#EA3636','#E5C63D','#EB8504'],
                 series: [
@@ -247,9 +274,9 @@ export default {
 
             });
         });
-        // let pieInspect = this.$refs.pie_inspect //获取检查累计饼图的容器
+        let pieInspect = this.$refs.pie1 //获取检查累计饼图的容器
         let pieProblem = this.$refs.pie_problem //获取问题分布饼图的容器
-        // SetEcharts.init(pieInspect,'pie',this.pieInspectOpts,this.pieInspectLegendParam)//初始化检查累计饼图
+        SetEcharts.init(pieInspect,'pie',this.pie1Opts,this.pieInspectLegendParam)//初始化检查累计饼图
         SetEcharts.init(pieProblem,'pie',this.pieProblemOpts)//初始化问题分布饼图
 
         let gallerySwiper = new Swiper('#gallery',{ //初始化swiper
@@ -307,7 +334,7 @@ export default {
     }
     .qm-display {//安全管理--安全展示
         flex: 3;
-        background: rgba(0,11,50,1);
+        background: rgba(0,11,50,.6);
         &__content {
             height: 100%;
             .swiper-container {

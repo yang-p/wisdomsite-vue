@@ -144,7 +144,7 @@
                     <div class="card__content" style="height: 85%;">
                         <div class="pie-wrapper" style="height: 100%;">
                             <div style="width: 100%;height:90%;" ref="pie_inspect"></div>
-                            <div class="flex-sparound pie-wrapper__bottom">
+                            <div class="flex-sparound pie-wrapper__bottom" style="color: #82A9BA;">
                                 <div><span>检查总数</span><span>261项</span></div>
                                 <div><span>合格</span><span>26项</span></div>
                             </div>

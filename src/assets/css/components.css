@@ -45,22 +45,22 @@
 .td-bgcolor-6 {
   background-color: #E46262;
 }
-.icon-circle-icon1 {
+.icon-circle-icon0 {
   background-image: url(../images/icon/icon_cir1.png);
 }
-.icon-circle-icon2 {
+.icon-circle-icon1 {
   background-image: url(../images/icon/icon_cir2.png);
 }
-.icon-circle-icon3 {
+.icon-circle-icon2 {
   background-image: url(../images/icon/icon_cir3.png);
 }
-.icon-circle-icon4 {
+.icon-circle-icon3 {
   background-image: url(../images/icon/icon_cir4.png);
 }
-.icon-circle-icon5 {
+.icon-circle-icon4 {
   background-image: url(../images/icon/icon_cir5.png);
 }
-.icon-circle-icon6 {
+.icon-circle-icon5 {
   background-image: url(../images/icon/icon_cir6.png);
 }
 .icon-text-pm25::before {
@@ -531,4 +531,198 @@
 }
 .text-strip span:nth-child(6) {
   background-color: #61001D;
+}
+.text-strip1 {
+  height: 10px;
+  display: flex;
+  border-radius: 10px;
+}
+.text-strip1 span {
+  position: relative;
+  flex: 1;
+  font-size: 10PX;
+  color: #82a9ba;
+}
+.text-strip1 span::after {
+  content: attr(data-text);
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  right: -5px;
+}
+.text-strip1 span:first-child {
+  background-color: #0CBD5C;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+.text-strip1 span:first-child::before {
+  content: attr(data-text1);
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: 0px;
+}
+.text-strip1 span:last-child {
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+.text-strip1 span:nth-child(2) {
+  background-color: #E5C63D;
+}
+.text-strip1 span:nth-child(3) {
+  background-color: #EB8504;
+}
+.text-strip1 span:nth-child(4) {
+  background-color: #EA3636;
+}
+.text-strip1 span:nth-child(5) {
+  background-color: #960453;
+}
+.text-strip1 span:nth-child(6) {
+  background-color: #61001D;
+}
+.radar {
+  position: absolute;
+  border: 1px solid #316180;
+  width: 100%;
+  height: 100%;
+  font-size: 32px;
+  border-radius: 50%;
+}
+.radar {
+  background: linear-gradient(90deg, transparent 49.75%, #316180 49.75%, transparent 50.25%), linear-gradient(transparent 49.75%, #316180 49.75%, transparent 50.25%), repeating-radial-gradient(transparent 0, transparent 0.95em, #316180 1em);
+}
+.radar::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  animation: scanning 5s linear infinite;
+  transform-origin: 100% 100%;
+}
+.radar::before {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0) 50%, #4891be 100%);
+  border-radius: 100% 0 0 0;
+}
+.radar-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80px;
+  height: 80px;
+  font-size: 2.4rem;
+  font-weight: 500;
+  transform: translate(-50%, -50%);
+  color: #0CBD5C;
+  vertical-align: middle;
+  line-height: 80px;
+  text-align: center;
+  border-radius: 50%;
+}
+.radar-text span {
+  font-size: 1.6rem;
+  margin-left: 4px;
+}
+@keyframes scanning {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.progress-bar {
+  position: relative;
+  height: 100%;
+}
+.progress-bar__wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  height: 40px;
+  width: 60%;
+  position: relative;
+}
+.progress-bar__list {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.progress-bar__list li {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 10;
+}
+.progress-bar__list li::after {
+  content: attr(data-date);
+  position: absolute;
+  bottom: -250%;
+  left: -200%;
+}
+.progress-bar__list .active {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+}
+.progress-bar__list .active::after {
+  content: attr(data-date);
+  position: absolute;
+  bottom: -100%;
+  left: -50%;
+}
+.progress-bar__list .active::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: #4891BE;
+  border-radius: 50%;
+}
+.progress-bar__line {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+}
+.progress-bar__line__top {
+  display: block;
+  width: 10%;
+  height: 100%;
+  background-color: #4891BE;
+}
+.progress-bar__btn {
+  position: absolute;
+  top: 25%;
+  width: 12px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50%;
+}
+.progress-bar__btn__prev {
+  left: -5%;
+  background-image: url(../images/icon/icon_btnprev.png);
+}
+.progress-bar__btn__next {
+  right: -5%;
+  background-image: url(../images/icon/icon_btnnext.png);
+}
+.progress-bar__text {
+  position: absolute;
+  top: 20%;
+}
+.progress-bar__text__start {
+  left: 8%;
+}
+.progress-bar__text__end {
+  right: 8%;
 }
