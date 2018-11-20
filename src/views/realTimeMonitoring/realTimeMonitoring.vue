@@ -223,6 +223,11 @@ export default {
                             border:2px transparent solid;
                             transition: all .2s linear;
                             background-repeat: no-repeat;
+                            a {
+                                color: #fff;
+                                text-shadow: 0px 0px 2px #fff, 0px 0px 4px #fff;
+                                transition: all .2s linear;
+                            }
                             .icon-text-classify::before{
                                 .icon-text-classify_active;
                             }

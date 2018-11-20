@@ -2,7 +2,6 @@
 .calendar {
   position: relative;
   width: 100%;
-  border-radius: 4px;
   overflow: hidden;
 }
 .ui-datepicker-header {

@@ -20,7 +20,7 @@
                     <div class="card__header">
                         <span class="card__header__title">工种</span>
                     </div>
-                    <div class="card__content" style="height:85%;">
+                    <div class="card__content" style="height: 180px;">
                         <div style="height: 100%;" ref="pie_problem"></div>
                     </div> 
                 </div>   

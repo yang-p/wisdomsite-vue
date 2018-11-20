@@ -718,11 +718,11 @@
 }
 .progress-bar__text {
   position: absolute;
-  top: 20%;
+  top: 18%;
 }
 .progress-bar__text__start {
-  left: 8%;
+  left: 6%;
 }
 .progress-bar__text__end {
-  right: 8%;
+  right: 6%;
 }
